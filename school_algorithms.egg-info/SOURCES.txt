@@ -1,0 +1,9 @@
+.gitattributes
+LICENSE
+README.md
+school_algorithms.py
+setup.py
+school_algorithms.egg-info/PKG-INFO
+school_algorithms.egg-info/SOURCES.txt
+school_algorithms.egg-info/dependency_links.txt
+school_algorithms.egg-info/top_level.txt
