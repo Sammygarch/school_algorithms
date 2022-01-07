@@ -147,5 +147,3 @@ def trapezium_area(c, b, h):
     """
     _if_not_int_or_float_raise(c, b, h)
     return ((c + b) / 2) * h
-
-print(trapezium_area(4, 5, "t"))
