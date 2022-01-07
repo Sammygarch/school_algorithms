@@ -13,3 +13,8 @@ Functions include:
 - A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle
 - A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle
 - A function that calculates the  area of a triangle
+
+## To import:
+```
+from school_algorithms import school_algorithms
+```
