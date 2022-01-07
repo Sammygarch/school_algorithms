@@ -1,3 +1,4 @@
 src/school_algorithms.egg-info/*
+src/school_algorithms/__pycache__/*
 dist/*
 __pychache__/*
