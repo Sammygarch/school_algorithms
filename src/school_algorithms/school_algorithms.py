@@ -13,7 +13,7 @@ from math import sqrt
 def _if_not_int_or_float_raise(*args):
     for arg in args:
         if type(arg) != int and type(arg) != float:
-            raise ValueError ("At least one of the values wasn't an integer or a floar.")
+            raise ValueError ("At least, one of the values wasn't an integer or a float.")
 
 def power_calc(E, t):
     """
@@ -25,7 +25,7 @@ def power_calc(E, t):
         t (int or float): The time value of the equation
 
     Returns:
-        E / t  : (float)
+        Float: E / t
 
     Raises:
         ValueError: If E or t is not an integer or float
@@ -63,7 +63,7 @@ def time_calc(p, E):
         E (int or float): The energy value of the equaton
 
     Returns:
-        E / p
+        Float: E / p
 
     Raises:
         ValueError: If p or E is not an integer or float
@@ -82,7 +82,7 @@ def pythag_hypot(a, b):
         b (int or float): leg(b) of the equation
 
     Returns:
-        sqrt(a**2 + b**2)
+        Float: sqrt(a**2 + b**2)
 
     Raises:
         ValueError: If a or b is not an integer or float
@@ -101,7 +101,7 @@ def pythag_leg(hy, a):
         a: the leg of the equation
 
     Returns:
-        sqrt(a**2 + b**2)
+        Float: sqrt(a**2 + b**2)
 
     Raises:
         ValueError: If hy or a is not an integer or float
@@ -113,17 +113,39 @@ def pythag_leg(hy, a):
 def triangle_area(b, h):
     """
     Calculates the  area of a triangle using the formula:
-        area = 0.5(base * height)
+        area = (base * height)/2
 
     Args:
         b(int or float): the base in the equation
         h(int or float): the height in the equation
 
     Returns:
-        (b*h) / 2
+        Float: (b*h) / 2
 
     Raises:
-        ValueError: If hy or a is not an integer or float
+        ValueError: If b or h is not an integer or float
     """
     _if_not_int_or_float_raise(b, h)
     return (b*h) / 2
+
+def trapezium_area(c, b, h):
+    """
+    Calculates the area of a trapezium using the formula:
+        area = ((ceiling + base) / 2) * height
+
+    Args:
+        c(int or float): the ceiling in the equation
+        b(int or float): the base in the equation
+        h(int or float): the height in the equation
+
+    Returns:
+        Float: ((c + b) / 2) * h
+
+    Raises:
+        ValueError: If c b or h is not an integer or float
+
+    """
+    _if_not_int_or_float_raise(c, b, h)
+    return ((c + b) / 2) * h
+
+print(trapezium_area(4, 5, "t"))
