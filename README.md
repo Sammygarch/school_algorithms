@@ -18,3 +18,4 @@ Functions include:
 - A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle
 - A function that calculates the area of a triangle
 - A function that calculates the area of a trapezium
+- A function that calculates the area of a circle

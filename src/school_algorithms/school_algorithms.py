@@ -8,7 +8,7 @@ It aims to provide a simple way for secondary school students
 to learn and calculate equations that the often use.
 """
 
-from math import sqrt
+import math
 
 def _if_not_int_or_float_raise(*args):
     for arg in args:
@@ -89,7 +89,7 @@ def pythag_hypot(a, b):
 
     """
     _if_not_int_or_float_raise(a, b)
-    return sqrt(a**2 + b**2)
+    return math.sqrt(a**2 + b**2)
 
 def pythag_leg(hy, a):
     """
@@ -108,7 +108,7 @@ def pythag_leg(hy, a):
 
     """
     _if_not_int_or_float_raise(hy, a)
-    return sqrt(hy**2 - a**2)
+    return math.sqrt(hy**2 - a**2)
 
 def triangle_area(b, h):
     """
@@ -147,3 +147,20 @@ def trapezium_area(c, b, h):
     """
     _if_not_int_or_float_raise(c, b, h)
     return ((c + b) / 2) * h
+
+def circle_area(r):
+    """
+    Calculates the area of a trapezium using the formula:
+        area = \u03C0 * (radius squared)
+
+    Args:
+        r(int or float): the radius in the equation
+
+    Returns:
+        Float: \u03C0 * (r**2)
+
+    Raises:
+        ValueError: If r is not an integer or float
+    """
+    _if_not_int_or_float_raise(r)
+    return math.pi * (r**2)
