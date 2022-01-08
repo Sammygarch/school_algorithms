@@ -1,8 +1,5 @@
 import unittest
 
-
-
-
 class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
         with self.assertRaises(ValueError):
@@ -68,6 +65,36 @@ class TestMathsAlgos(unittest.TestCase):
 
     def test_cirle_area(self):
         self.assertEqual(school_algorithms.circle_area(10), 314.1592653589793)
+
+class TestForRaisedErrors(unittest.TestCase):
+    def test_physics_raised_errors(self):
+        with self.assertRaises(ValueError):
+            school_algorithms.power_calc("t", "e")
+            school_algorithms.power_calc(False, True)
+            school_algorithms.power_calc(False, "t")
+            school_algorithms.energy_calc("t", "e")
+            school_algorithms.energy_calc(False, True)
+            school_algorithms.energy_calc(False, "t")
+            school_algorithms.time_calc("t", "e")
+            school_algorithms.time_calc(False, True)
+            school_algorithms.time_calc(False, "t")
+
+    def test_maths_raised_errors(self):
+        with self.assertRaises(ValueError):
+            school_algorithms.pythag_hypot("t", "e")
+            school_algorithms.pythag_hypot(False, True)
+            school_algorithms.pythag_hypot(False, "t")
+            school_algorithms.pythag_leg("t", "e")
+            school_algorithms.pythag_leg(False, True)
+            school_algorithms.pythag_leg(False, "t")
+            school_algorithms.triangle_area("t", "e")
+            school_algorithms.triangle_area(False, True)
+            school_algorithms.triangle_area(False, "t")
+            school_algorithms.trapezium_area("t", "e", "s")
+            school_algorithms.trapezium_area(False, True, False)
+            school_algorithms.trapezium_area(False, "t", False)
+            school_algorithms.circle_area("t")
+            school_algorithms.circle_area(False)
 
 if __name__ == '__main__':
     from src.school_algorithms import school_algorithms
