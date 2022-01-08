@@ -12,7 +12,7 @@ setup(
     description = "School algorithm module for Python",
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "https://github.com/Sammygarch/school-algorithms.git",
+    url = "https://github.com/Sammygarch/school_algorithms.git",
     project_urls = {
         "Bug Tracker": "https://github.com/Sammygarch/school_algorithms/issues"
     },
