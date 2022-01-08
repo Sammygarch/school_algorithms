@@ -1,6 +1,6 @@
 import unittest
 
-from school_algorithms import school_algorithms
+
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -70,4 +70,5 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(school_algorithms.circle_area(10), 314.1592653589793)
 
 if __name__ == '__main__':
+    from src.school_algorithms import school_algorithms
     unittest.main()
