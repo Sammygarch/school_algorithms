@@ -28,3 +28,7 @@
 ehthumbs.db
 Thumbs.db
 *.pyo
+dist/
+__pycache__/
+.*
+!/.gitignore
