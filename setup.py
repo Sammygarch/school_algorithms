@@ -14,7 +14,7 @@ setup(
     long_description_content_type = "text/markdown",
     url = "https://github.com/Sammygarch/school-algorithms.git",
     project_urls = {
-        "Bug Tracker": "https://github.com/Sammygarch/school-algorithms/issues"
+        "Bug Tracker": "https://github.com/Sammygarch/school_algorithms/issues"
     },
     classifiers = [
         "Programming Language :: Python :: 3",
