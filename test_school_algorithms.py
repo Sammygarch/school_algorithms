@@ -30,6 +30,9 @@ class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise_with_int(self):
         try:
             _if_not_int_or_float_raise(5)
+            _if_not_int_or_float_raise(-4)
+            _if_not_int_or_float_raise(5, 6)
+            _if_not_int_or_float_raise(5, 6, -4)
             _if_not_int_or_float_raise(5, 5, 4, 3)
 
         except ValueError:
@@ -38,6 +41,11 @@ class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise_with_float(self):
         try:
             _if_not_int_or_float_raise(5.0)
+            _if_not_int_or_float_raise(4.5)
+            _if_not_int_or_float_raise(-5.0)
+            _if_not_int_or_float_raise(5.7, -6.0)
+            _if_not_int_or_float_raise(5.0, 6.3, -5.9)
+            _if_not_int_or_float_raise(-5.0, -6.3, -5.9, 7.3)
             _if_not_int_or_float_raise(5.0, 3.5, 7.1)
 
         except ValueError:
@@ -46,7 +54,10 @@ class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise_with_float_and_int(self):
         try:
             _if_not_int_or_float_raise(4, 5.0)
+            _if_not_int_or_float_raise(4, 7.3, 5.0)
+            _if_not_int_or_float_raise(4.5, 5.0, -6)
             _if_not_int_or_float_raise(4.0, 5)
+            _if_not_int_or_float_raise(5.0, 6, -5.9)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
@@ -54,12 +65,15 @@ class TestPrivFunc(unittest.TestCase):
 class TestPhysicsAlgos(unittest.TestCase):
     def test_power_calc(self):
         self.assertEqual(power_calc(4, 2), 2.0)
+        self.assertEqual(power_calc(7, -4), -1.75)
 
     def test_energy_calc(self):
         self.assertEqual(energy_calc(4, 2), 8)
+        self.assertEqual(energy_calc(4, -2), -8)
 
     def test_time_calc(self):
         self.assertEqual(time_calc(2, 4), 2.0)
+        self.assertEqual(time_calc(2, -4), -2.0)
 
 class TestMathsAlgos(unittest.TestCase):
     def test_pythag_hypot(self):
