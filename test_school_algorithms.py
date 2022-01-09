@@ -56,6 +56,7 @@ class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise_with_float_and_int(self):
         try:
             _if_not_int_or_float_raise(4, 5.0)
+            _if_not_int_or_float_raise(-0.00)
             _if_not_int_or_float_raise(4, 7.3, 5.0)
             _if_not_int_or_float_raise(4.5, 5.0, -6)
             _if_not_int_or_float_raise(4.0, 5)
@@ -79,6 +80,7 @@ class TestPrivFunc(unittest.TestCase):
             _if_negative_raise(4.0, 2)
             _if_negative_raise(6.7, 3.5, 5)
             _if_negative_raise(0)
+            _if_negative_raise(0.0)
 
         except ValueError:
             assert False, f"'_if_negative_raise' raised an exception with a positive number"
