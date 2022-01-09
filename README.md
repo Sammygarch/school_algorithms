@@ -7,7 +7,7 @@ to learn and calculate equations that they often use.
 
 ## To import:
 ```
-from school_algorithms import school_algorithms
+import school_algorithms
 ```
 
 Functions include:
