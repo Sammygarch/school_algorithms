@@ -1,4 +1,4 @@
-from ._if_not_int_or_float_raise import _if_not_int_or_float_raise
+from ._if_not_valid_raise import _if_not_int_or_float_raise
 
 def power_calc(E, t):
     """Calculates power from energy and time using the formula:
