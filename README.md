@@ -1,16 +1,10 @@
 # School Algorithms
-**school_algorithms** is a **Python** module for secondary school
-maths and physics equations.
+**school_algorithms** is a **Python** module for secondary schoolmaths and physics equations.
 
 It aims to provide a simple way for secondary school students
 to learn and calculate equations that they often use.
 
-## To import:
-```
-import school_algorithms
-```
-
-Functions include:
+### Functions include:
 - A function that calculates power from energy and time
 - A function that calculates energy from power and time
 - A function that calculates time from power and energy
@@ -19,3 +13,8 @@ Functions include:
 - A function that calculates the area of a triangle
 - A function that calculates the area of a trapezium
 - A function that calculates the area of a circle
+
+#### To import:
+```
+import school_algorithms
+```
