@@ -1,7 +1,7 @@
 import unittest
 
 from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                                              _if_negative_raise)
+                                                              _if_not_positive_raise)
 from src.school_algorithms import (circle_area,
                                    power_calc,
                                    energy_calc,
@@ -66,24 +66,24 @@ class TestPrivFunc(unittest.TestCase):
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
 
 
-    def test_if_negative_raise(self):
+    def test_if_not_positive_raise(self):
         with self.assertRaises(ValueError):
-            _if_negative_raise(-4)
-            _if_negative_raise(-4.0)
-            _if_negative_raise(-4.0, 2)
-            _if_negative_raise(-4, 5.0, 6)
+            _if_not_positive_raise(-4)
+            _if_not_positive_raise(-4.0)
+            _if_not_positive_raise(-4.0, 2)
+            _if_not_positive_raise(-4, 5.0, 6)
+            _if_not_positive_raise(0.0, -0.0)
+            _if_not_positive_raise(-0.5)
 
-    def test_if_negative_raise_for_no_raise(self):
+    def test_if_not_positive_raise_for_no_raise(self):
         try:
-            _if_negative_raise(4)
-            _if_negative_raise(4.0)
-            _if_negative_raise(4.0, 2)
-            _if_negative_raise(6.7, 3.5, 5)
-            _if_negative_raise(0)
-            _if_negative_raise(0.0)
+            _if_not_positive_raise(4)
+            _if_not_positive_raise(4.0)
+            _if_not_positive_raise(4.0, 2)
+            _if_not_positive_raise(6.7, 3.5, 5)
 
         except ValueError:
-            assert False, f"'_if_negative_raise' raised an exception with a positive number"
+            assert False, f"'_if_not_positive_raise' raised an exception with a positive number"
 
 
 class TestPhysicsAlgos(unittest.TestCase):

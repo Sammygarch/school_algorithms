@@ -1,6 +1,6 @@
 from math import sqrt as _sqrt
 from ._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                         _if_negative_raise)
+                                         _if_not_positive_raise)
 def pythag_leg(hy, a):
     """
     Calculates the length of a leg in right-angled triangle using the formula:
@@ -22,8 +22,9 @@ def pythag_leg(hy, a):
     Raises
     ------
     ValueError
-        If hy or a is not an integer or float.
-        If hy or a is a negative number
+        If hy or a::
+            Is not an integer or float.
+            Is not positive.
 
     Examples
     --------
@@ -32,7 +33,7 @@ def pythag_leg(hy, a):
 
     """
     _if_not_int_or_float_raise(hy, a)
-    _if_negative_raise(hy, a)
+    _if_not_positive_raise(hy, a)
     return _sqrt(hy**2 - a**2)
 
 def pythag_hypot(a, b):
@@ -55,8 +56,9 @@ def pythag_hypot(a, b):
     Raises
     ------
     ValueError
-        If a or b is not an integer or float
-        If a or b is a negative number
+        If a or b::
+            Is not an integer or float.
+            Is not positive.
 
     Examples
     --------
@@ -65,5 +67,5 @@ def pythag_hypot(a, b):
 
     """
     _if_not_int_or_float_raise(a, b)
-    _if_negative_raise(a, b)
+    _if_not_positive_raise(a, b)
     return _sqrt(a**2 + b**2)

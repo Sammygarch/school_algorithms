@@ -1,5 +1,6 @@
 from math import pi as _pi
-from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_negative_raise
+from ._if_not_valid_raise import (_if_not_int_or_float_raise,
+                                   _if_not_positive_raise)
 
 
 def circle_area(r):
@@ -20,8 +21,9 @@ def circle_area(r):
     Raises
     ------
     ValueError
-        If r is not an integer or float.
-        If r is negative.
+        If r::
+            Is not an integer or float.
+            Is not positive.
 
     Examples
     --------
@@ -30,5 +32,5 @@ def circle_area(r):
 
     """
     _if_not_int_or_float_raise(r)
-    _if_negative_raise(r)
+    _if_not_positive_raise(r)
     return _pi * (r**2)

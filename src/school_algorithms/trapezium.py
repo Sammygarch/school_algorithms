@@ -1,4 +1,4 @@
-from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_negative_raise
+from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_not_positive_raise
 
 def trapezium_area(c, b, h):
     """
@@ -24,7 +24,9 @@ def trapezium_area(c, b, h):
     Raises
     ------
     ValueError
-         If c b or h is not an integer or float
+         If c b or h::
+            Is not an integer or float
+            Is not positive
 
     Examples
     --------
@@ -33,4 +35,5 @@ def trapezium_area(c, b, h):
 
     """
     _if_not_int_or_float_raise(c, b, h)
+    _if_not_positive_raise(c, b, h)
     return ((c + b) / 2) * h

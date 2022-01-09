@@ -1,4 +1,4 @@
-from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_negative_raise
+from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_not_positive_raise
 
 def triangle_area(b, h):
     """
@@ -21,8 +21,9 @@ def triangle_area(b, h):
     Raises
     ------
     ValueError
-        If b or h is not an integer or float.
-        If b or h is negative.
+        If b or h::
+            Is not an integer or float.
+            Is not positive.
 
     Examples
     --------
@@ -31,5 +32,5 @@ def triangle_area(b, h):
 
     """
     _if_not_int_or_float_raise(b, h)
-    _if_negative_raise(b, h)
+    _if_not_positive_raise(b, h)
     return (b*h) / 2
