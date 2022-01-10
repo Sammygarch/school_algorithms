@@ -54,6 +54,9 @@ trapezium_area
 circle_area
     A function that calculates the area of a circle
 
+right_rect_pyramid
+    A function that calculates the volume of a right rectangle pyramid
+
 
 """
 
@@ -62,3 +65,4 @@ from .physics import *
 from .pythagorus import *
 from .trapezium import *
 from .triangle import *
+from .pyramid import *

@@ -1,4 +1,5 @@
-from ._if_not_valid_raise import _if_not_int_or_float_raise, _if_not_positive_raise
+from ._if_not_valid_raise import (_if_not_int_or_float_raise,
+                                  _if_not_positive_raise)
 
 def trapezium_area(c, b, h):
     """

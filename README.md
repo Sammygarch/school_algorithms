@@ -1,5 +1,5 @@
 # School Algorithms
-**school_algorithms** is a **Python** module for secondary schoolmaths and physics equations.
+**school_algorithms** is a **Python** module for secondary school maths and physics equations.
 
 It aims to provide a simple way for secondary school students
 to learn and calculate equations that they often use.
@@ -13,6 +13,7 @@ to learn and calculate equations that they often use.
 - A function that calculates the area of a triangle
 - A function that calculates the area of a trapezium
 - A function that calculates the area of a circle
+- A function that calculates the volume of a right rectangle pyramid
 
 #### To import:
 ```

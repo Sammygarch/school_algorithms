@@ -9,7 +9,8 @@ from src.school_algorithms import (circle_area,
                                    pythag_leg,
                                    pythag_hypot,
                                    trapezium_area,
-                                   triangle_area)
+                                   triangle_area,
+                                   right_rect_pyramid)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -150,6 +151,10 @@ class TestMathsAlgos(unittest.TestCase):
     def test_cirle_area(self):
         self.assertEqual(circle_area(10), 314.1592653589793)
         self.assertEqual(circle_area(10.0), 314.1592653589793)
+
+    def test_right_rect_pyramid(self):
+        self.assertEqual(right_rect_pyramid(3, 4, 7), 28.0)
+        self.assertEqual(right_rect_pyramid(3.0, 4.4, 7.2), 31.680000000000003)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):

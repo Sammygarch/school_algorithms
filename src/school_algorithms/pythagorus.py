@@ -1,6 +1,7 @@
 from math import sqrt as _sqrt
 from ._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                         _if_not_positive_raise)
+                                  _if_not_positive_raise)
+
 def pythag_leg(hy, a):
     """
     Calculates the length of a leg in right-angled triangle using the formula:
