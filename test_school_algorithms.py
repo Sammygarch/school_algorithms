@@ -1,7 +1,7 @@
 import unittest
 
 from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                                              _if_not_positive_raise)
+                                                        _if_not_positive_raise)
 from src.school_algorithms import (circle_area,
                                    power_calc,
                                    energy_calc,
@@ -186,11 +186,30 @@ class TestForRaisedErrors(unittest.TestCase):
             circle_area(False)
             circle_area(-1)
 
+    def test_shapes_not_positive_raise(self):
+        with self.assertRaises(ValueError):
+            pythag_hypot(0, 0)
+            pythag_hypot(-0.1, -0.01)
+            pythag_hypot(-7, -0.0)
+            pythag_leg(0, 0)
+            pythag_leg(-0.01, -0.1)
+            pythag_leg(-0.0, -7 )
+            triangle_area(0, 0)
+            triangle_area(-0.01, -0.1)
+            triangle_area(-0.0, -7)
+            trapezium_area(0, 0, 0)
+            trapezium_area(-0.01, -0.1, 0)
+            trapezium_area(-0.0, -7, 0)
+            circle_area(0)
+            circle_area(-0.01)
+            circle_area(-1)
+
     def test_pythag_leg_raise_errors(self):
         with self.assertRaises(ValueError):
             pythag_leg(2, 5)
             pythag_leg(2, 5.7)
             pythag_leg(2.4, 5.7)
+
 
 if __name__ == '__main__':
     unittest.main()
