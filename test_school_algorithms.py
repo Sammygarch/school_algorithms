@@ -28,14 +28,17 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_or_float_raise({"sammy" : 1, "test": True})
             _if_not_int_or_float_raise(("hello", True, 3))
             _if_not_int_or_float_raise(("hello", True, 3))
+            _if_not_int_or_float_raise([1, 2, 3])
 
     def test_if_not_int_or_float_raise_with_int(self):
         try:
             _if_not_int_or_float_raise(5)
+            _if_not_int_or_float_raise(0)
             _if_not_int_or_float_raise(-4)
             _if_not_int_or_float_raise(5, 6)
             _if_not_int_or_float_raise(5, 6, -4)
             _if_not_int_or_float_raise(5, 5, 4, 3)
+            _if_not_int_or_float_raise(-5, +5, 40, 23)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with an int"
@@ -57,9 +60,11 @@ class TestPrivFunc(unittest.TestCase):
         try:
             _if_not_int_or_float_raise(4, 5.0)
             _if_not_int_or_float_raise(-0.00)
+            _if_not_int_or_float_raise(-0.0)
             _if_not_int_or_float_raise(4, 7.3, 5.0)
             _if_not_int_or_float_raise(4.5, 5.0, -6)
             _if_not_int_or_float_raise(4.0, 5)
+            _if_not_int_or_float_raise(5.0+5)
             _if_not_int_or_float_raise(5.0, 6, -5.9)
 
         except ValueError:
@@ -120,11 +125,15 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(pythag_hypot(4, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2.0), 4.47213595499958)
+        self.assertEqual(pythag_hypot(10, 5), 11.180339887498949)
+        self.assertEqual(pythag_hypot(10.5, 5), 11.629703349613008)
 
     def test_pythag_leg(self):
         self.assertEqual(pythag_leg(7, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2.0), 6.708203932499369)
+        self.assertEqual(pythag_leg(11, 5), 9.797958971132712)
+        self.assertEqual(pythag_leg(11, 5), 9.797958971132712)
 
     def test_triangle_area(self):
         self.assertEqual(triangle_area(4, 2), 4.0)
@@ -176,6 +185,12 @@ class TestForRaisedErrors(unittest.TestCase):
             circle_area("t")
             circle_area(False)
             circle_area(-1)
+
+    def test_pythag_leg_raise_errors(self):
+        with self.assertRaises(ValueError):
+            pythag_leg(2, 5)
+            pythag_leg(2, 5.7)
+            pythag_leg(2.4, 5.7)
 
 if __name__ == '__main__':
     unittest.main()

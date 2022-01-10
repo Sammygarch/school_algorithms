@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name = "school_algorithms",
-    version = "1.3.7",
+    version = "1.3.8",
     author = "Sammy Garcia",
     author_email = "s@mmygarcia.com",
     description = "School algorithm module for Python",
@@ -20,11 +20,9 @@ setup(
         "Programming Language :: Python :: 3",
         "Development Status :: 5 - Production/Stable",
         "Operating System :: OS Independent",
-        "License :: OSI Approved :: MIT License",
-        "Intended Audience :: Developers",
-        "Topic :: Education"
+        "License :: OSI Approved :: MIT License"
     ],
     package_dir = {"": "src"},
     packages = find_packages(where="src"),
-    python_requires = ">=3.6",
+    python_requires = ">=3",
 )

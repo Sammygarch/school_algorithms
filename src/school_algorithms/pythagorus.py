@@ -25,6 +25,7 @@ def pythag_leg(hy, a):
         If hy or a::
             Is not an integer or float.
             Is not positive.
+        If a is greater than hy.
 
     Examples
     --------
@@ -34,6 +35,8 @@ def pythag_leg(hy, a):
     """
     _if_not_int_or_float_raise(hy, a)
     _if_not_positive_raise(hy, a)
+    if a > hy:
+        raise ValueError ("a cannot be greater than hy")
     return _sqrt(hy**2 - a**2)
 
 def pythag_hypot(a, b):
