@@ -190,6 +190,9 @@ class TestForRaisedErrors(unittest.TestCase):
             circle_area("t")
             circle_area(False)
             circle_area(-1)
+            right_rect_pyramid(False, True, False)
+            right_rect_pyramid(False, "t", False)
+            right_rect_pyramid(False, "t", False)
 
     def test_shapes_not_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -208,6 +211,9 @@ class TestForRaisedErrors(unittest.TestCase):
             circle_area(0)
             circle_area(-0.01)
             circle_area(-1)
+            right_rect_pyramid(0, 0, 0)
+            right_rect_pyramid(-0.01, -0.1, 0)
+            right_rect_pyramid(-0.0, -7, 0)
 
     def test_pythag_leg_raise_errors(self):
         with self.assertRaises(ValueError):
