@@ -201,27 +201,34 @@ class TestForRaisedErrors(unittest.TestCase):
             pythag_hypot(0, 0)
             pythag_hypot(-0.1, -0.01)
             pythag_hypot(-7, -0.0)
+            pythag_hypot(-70000000000, -100000000)
             pythag_leg(0, 0)
             pythag_leg(-0.01, -0.1)
             pythag_leg(-0.0, -7 )
+            pythag_leg(-1000000000, -70000000000000 )
             triangle_area(0, 0)
             triangle_area(-0.01, -0.1)
             triangle_area(-0.0, -7)
+            triangle_area(-10000000000, -70000000000)
             trapezium_area(0, 0, 0)
             trapezium_area(-0.01, -0.1, 0)
             trapezium_area(-0.0, -7, 0)
+            trapezium_area(-200000000, -700000, -8.4)
             circle_area(0)
             circle_area(-0.01)
             circle_area(-1)
+            circle_area(-100000000000000000)
             right_rect_pyramid(0, 0, 0)
             right_rect_pyramid(-0.01, -0.1, 0)
             right_rect_pyramid(-0.0, -7, 0)
+            right_rect_pyramid(-20000, -700000, -100000)
 
     def test_pythag_leg_raise_errors(self):
         with self.assertRaises(ValueError):
             pythag_leg(2, 5)
             pythag_leg(2, 5.7)
             pythag_leg(2.4, 5.7)
+            pythag_leg(1.1, 1.2)
 
 
 if __name__ == '__main__':
