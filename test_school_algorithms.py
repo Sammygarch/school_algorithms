@@ -151,10 +151,12 @@ class TestMathsAlgos(unittest.TestCase):
     def test_cirle_area(self):
         self.assertEqual(circle_area(10), 314.1592653589793)
         self.assertEqual(circle_area(10.0), 314.1592653589793)
+        self.assertEqual(circle_area(2.5), 19.634954084936208)
 
     def test_right_rect_pyramid(self):
         self.assertEqual(right_rect_pyramid(3, 4, 7), 28.0)
         self.assertEqual(right_rect_pyramid(3.0, 4.4, 7.2), 31.680000000000003)
+        self.assertEqual(right_rect_pyramid(10, 5, 6), 100)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
@@ -186,13 +188,13 @@ class TestForRaisedErrors(unittest.TestCase):
             trapezium_area("t", "e", "s")
             trapezium_area(False, True, False)
             trapezium_area(False, "t", False)
-            trapezium_area(False, "t", False)
+            trapezium_area(-4, "t", 6)
             circle_area("t")
             circle_area(False)
             circle_area(-1)
             right_rect_pyramid(False, True, False)
             right_rect_pyramid(False, "t", False)
-            right_rect_pyramid(False, "t", False)
+            right_rect_pyramid(1, "t", 5)
 
     def test_shapes_not_positive_raise(self):
         with self.assertRaises(ValueError):
