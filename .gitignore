@@ -32,3 +32,4 @@ dist/
 __pycache__/
 .*
 !/.gitignore
+school_algorithms-*/
