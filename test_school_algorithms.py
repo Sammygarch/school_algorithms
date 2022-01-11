@@ -128,6 +128,7 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(pythag_hypot(4.0, 2.0), 4.47213595499958)
         self.assertEqual(pythag_hypot(10, 5), 11.180339887498949)
         self.assertEqual(pythag_hypot(10.5, 5), 11.629703349613008)
+        self.assertEqual(pythag_hypot(2, 7) 1.9230478952816)
 
     def test_pythag_leg(self):
         self.assertEqual(pythag_leg(7, 2), 6.708203932499369)
