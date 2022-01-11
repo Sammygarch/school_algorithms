@@ -141,6 +141,7 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(triangle_area(4, 2), 4.0)
         self.assertEqual(triangle_area(4.0, 2), 4.0)
         self.assertEqual(triangle_area(4.0, 2.0), 4.0)
+        self.assertEqual(triangle_area(4.5, 2.0), 4.5)
 
     def test_trapezium_area(self):
         self.assertEqual(trapezium_area(4, 5, 6), 27.0)
