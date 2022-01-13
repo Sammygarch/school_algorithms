@@ -57,6 +57,9 @@ circle_area
 right_rect_pyramid
     A function that calculates the volume of a right rectangle pyramid
 
+epe_calc
+    A function that calculates Elastic Potential Energy
+
 
 """
 

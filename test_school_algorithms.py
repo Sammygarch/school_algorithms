@@ -10,7 +10,8 @@ from src.school_algorithms import (circle_area,
                                    pythag_hypot,
                                    trapezium_area,
                                    triangle_area,
-                                   right_rect_pyramid)
+                                   right_rect_pyramid,
+                                   epe_calc)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -120,6 +121,14 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(time_calc(2.0, -4), -2.0)
         self.assertEqual(time_calc(-2.0, -4.0), 2.0)
         self.assertEqual(time_calc(2, -4), -2.0)
+
+    def test_epe_calc(self):
+        self.assertEqual(epe_calc(5, 10), 250)
+        self.assertEqual(epe_calc(10, 10), 500)
+        self.assertEqual(epe_calc(10.5, 10), 525)
+        self.assertEqual(epe_calc(10.5, 6.5), 221.8125)
+        self.assertEqual(epe_calc(10, 10), 500)
+
 
 class TestMathsAlgos(unittest.TestCase):
     def test_pythag_hypot(self):

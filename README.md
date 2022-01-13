@@ -37,6 +37,7 @@ to learn and calculate equations that they often use.
 - A function that calculates the area of a trapezium
 - A function that calculates the area of a circle
 - A function that calculates the volume of a right rectangle pyramid
+- A function that calculates Elastic Potential energy
 
 #### To import:
 ```
