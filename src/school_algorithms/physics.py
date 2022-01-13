@@ -94,3 +94,25 @@ def time_calc(p, E):
     """
     _if_not_int_or_float_raise(p, E)
     return E / p
+
+def epe_calc(k, e):
+    """
+    Calculates Elastic Potential Energy using the formula:
+        E = 0.5(spring constant(extension squared))
+        
+    Parameters
+    ----------
+    k: int or float
+        The spring constant in the equation
+        
+    e: int or float
+        The extension in the equation
+        
+    Returns
+    -------
+    Float
+        0.5 * (k * (e**2))
+        
+        
+    """
+return 0.5 * (k * (e**2))
