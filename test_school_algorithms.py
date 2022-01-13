@@ -224,6 +224,7 @@ class TestForRaisedErrors(unittest.TestCase):
             right_rect_pyramid(-0.01, -0.1, 0)
             right_rect_pyramid(-0.0, -7, 0)
             right_rect_pyramid(-20000, -700000, -100000)
+            right_rect_pyramid(20000, 700000, -100000)
 
     def test_pythag_leg_raise_errors(self):
         with self.assertRaises(ValueError):
@@ -231,6 +232,7 @@ class TestForRaisedErrors(unittest.TestCase):
             pythag_leg(2, 5.7)
             pythag_leg(2.4, 5.7)
             pythag_leg(1.1, 1.2)
+            pythag_leg(0.00001, 0.2)
 
 
 if __name__ == '__main__':
