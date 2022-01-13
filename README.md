@@ -15,7 +15,7 @@
       <a>Algorithms</a>
     </li>
      <li>
-      <a href="#" >How to Import</a>
+      <a>How to Import</a>
     </li>
   </ol>
 </details>
