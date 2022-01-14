@@ -15,29 +15,17 @@
       <a>Algorithms</a>
     </li>
      <li>
-<<<<<<< HEAD
-      <a=>How to Import</a>
-=======
       <a>How to Import</a>
->>>>>>> 28d10fa939cebc2a179b2fa7db3259295a76e870
     </li>
   </ol>
 </details>
 
 # School Algorithms
 **school_algorithms** is a **Python** module for secondary school maths and physics equations.
-<<<<<<< HEAD
-=======
-
->>>>>>> 28d10fa939cebc2a179b2fa7db3259295a76e870
 It aims to provide a simple way for secondary school students
 to learn and calculate equations that they often use.
 
 ### Functions include:
-<<<<<<< HEAD
-=======
-
->>>>>>> 28d10fa939cebc2a179b2fa7db3259295a76e870
 - A function that calculates power from energy and time
 - A function that calculates energy from power and time
 - A function that calculates time from power and energy
