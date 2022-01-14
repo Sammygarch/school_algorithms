@@ -11,7 +11,8 @@ from src.school_algorithms import (circle_area,
                                    trapezium_area,
                                    triangle_area,
                                    right_rect_pyramid,
-                                   epe_calc)
+                                   epe_calc,
+                                   circumference)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -169,6 +170,11 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(right_rect_pyramid(3.0, 4.4, 7.2), 31.680000000000003)
         self.assertEqual(right_rect_pyramid(10, 5, 6), 100)
 
+    def test_circumference(self):
+        self.assertEqual(circumference(5),  31.41592653589793)
+        self.assertEqual(circumference(5.0),  31.41592653589793)
+        self.assertEqual(circumference(7), 43.982297150257104)
+
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
         with self.assertRaises(ValueError):
@@ -206,6 +212,9 @@ class TestForRaisedErrors(unittest.TestCase):
             right_rect_pyramid(False, True, False)
             right_rect_pyramid(False, "t", False)
             right_rect_pyramid(1, "t", 5)
+            circumference("t")
+            circumference(False)
+            circumference(-1)
 
     def test_shapes_not_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -234,6 +243,10 @@ class TestForRaisedErrors(unittest.TestCase):
             right_rect_pyramid(-0.0, -7, 0)
             right_rect_pyramid(-20000, -700000, -100000)
             right_rect_pyramid(20000, 700000, -100000)
+            circumference(0)
+            circumference(-0.01)
+            circumference(-1)
+            circumference(-100000000000000000)
 
     def test_pythag_leg_raise_errors(self):
         with self.assertRaises(ValueError):
