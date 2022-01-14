@@ -63,6 +63,10 @@ epe_calc
 circumference
     A function that calculates the circumference of a circle
 
+circumference2
+    A function that calculates the circumference of a circle
+    using the diameter
+
 """
 
 from .circle import *

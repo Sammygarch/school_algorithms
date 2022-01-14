@@ -36,6 +36,7 @@ to learn and calculate equations that they often use.
 - _A function that calculates the area of a circle
 - _A function that calculates the volume of a right rectangle pyramid
 - _A function that calculates the circumference of a circle
+- _A function that calculates the circumference of a circle using diameter
 
 #### To import:
 ```

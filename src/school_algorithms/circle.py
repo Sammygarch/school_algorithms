@@ -64,3 +64,34 @@ def circumference(r):
     _if_not_int_or_float_raise(r)
     _if_not_positive_raise(r)
     return _pi * r * 2
+
+def circumference2(d):
+    """Calculates the circumference of a cirle using the formula:
+        \u03C0 * diameter
+
+    Parameters
+    ----------
+    d: int or float
+        The diameter in the equation.
+
+    Returns
+    -------
+        Float
+            \u03C0 * d
+
+    Raises
+    ------
+    ValueError
+        If d::
+            Is not an integer or float.
+            Is not positive.
+
+    Examples
+    --------
+    >>> school_algorithms.circumference(10)
+    31.415926535898
+
+    """
+    _if_not_int_or_float_raise(d)
+    _if_not_positive_raise(d)
+    return _pi * d
