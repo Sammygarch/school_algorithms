@@ -26,16 +26,16 @@ It aims to provide a simple way for secondary school students
 to learn and calculate equations that they often use.
 
 ### Functions include:
-- A function that calculates power from energy and time
-- A function that calculates energy from power and time
-- A function that calculates time from power and energy
-- A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle
-- A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle
-- A function that calculates the area of a triangle
-- A function that calculates the area of a trapezium
-- A function that calculates the area of a circle
-- A function that calculates the volume of a right rectangle pyramid
-- A function that calculates the circumference of a circle
+- _A function that calculates power from energy and time
+- _A function that calculates energy from power and time
+- _A function that calculates time from power and energy
+- _A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle
+- _A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle
+- _A function that calculates the area of a triangle
+- _A function that calculates the area of a trapezium
+- _A function that calculates the area of a circle
+- _A function that calculates the volume of a right rectangle pyramid
+- _A function that calculates the circumference of a circle
 
 #### To import:
 ```
