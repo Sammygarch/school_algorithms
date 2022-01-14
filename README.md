@@ -24,8 +24,8 @@
   </ol>
 </details>
 
-# School Algorithms
-**school_algorithms** is a **Python** module for secondary school maths and physics equations.
+# ***School Algorithms***
+**_school_algorithms_** is a **Python** module for secondary school maths and physics equations.
 
 =======
 
@@ -47,7 +47,7 @@ to learn and calculate equations that they often use.
 - A function that calculates the volume of a right rectangle pyramid
 - A function that calculates the circumference of a circle
 
-#### To import:
+#### **To import**:
 ```
 import school_algorithms
 ```
