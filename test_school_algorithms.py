@@ -12,7 +12,8 @@ from src.school_algorithms import (circle_area,
                                    triangle_area,
                                    right_rect_pyramid,
                                    epe_calc,
-                                   circumference)
+                                   circumference,
+                                   circumference2)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -174,6 +175,14 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(circumference(5),  31.41592653589793)
         self.assertEqual(circumference(5.0),  31.41592653589793)
         self.assertEqual(circumference(7), 43.982297150257104)
+        self.assertEqual(circumference(6.25), 39.269908169872416)
+
+    def test_circumference2(self):
+        self.assertEqual(circumference2(10), 31.41592653589793)
+        self.assertEqual(circumference2(10.0), 31.41592653589793)
+        self.assertEqual(circumference2(14), 43.982297150257104)
+        self.assertEqual(circumference2(14.0), 43.982297150257104)
+        self.assertEqual(circumference2(12.5), 39.269908169872416)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
