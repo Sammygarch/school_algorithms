@@ -9,13 +9,13 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about" >About The Project</a>
+      <a>About The Project</a>
     </li>
     <li>
-      <a href="#Algorithms"  >Algorithms</a>
+      <a>Algorithms</a>
     </li>
      <li>
-      <a href="#import" >How to Import</a>
+      <a=>How to Import</a>
     </li>
   </ol>
 </details>
@@ -23,12 +23,10 @@
 
 # School Algorithms
 **school_algorithms** is a **Python** module for secondary school maths and physics equations.
-<div>id="about"</div>
 It aims to provide a simple way for secondary school students
 to learn and calculate equations that they often use.
 
 ### Functions include:
-<div>id="Algorithms"</div>
 - A function that calculates power from energy and time
 - A function that calculates energy from power and time
 - A function that calculates time from power and energy
@@ -38,9 +36,9 @@ to learn and calculate equations that they often use.
 - A function that calculates the area of a trapezium
 - A function that calculates the area of a circle
 - A function that calculates the volume of a right rectangle pyramid
+- A function that calculates the circumference of a circle
 
 #### To import:
-<div>id="import"</div>
 ```
 import school_algorithms
 ```

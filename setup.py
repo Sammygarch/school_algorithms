@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name = "school_algorithms",
-    version = "1.5.0",
+    version = "1.6.0",
     author = "Sammy Garcia",
     author_email = "s@mmygarcia.com",
     description = "School algorithm module for Python",
