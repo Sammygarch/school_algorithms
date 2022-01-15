@@ -90,6 +90,9 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_positive_raise(4.0)
             _if_not_positive_raise(4.0, 2)
             _if_not_positive_raise(6.7, 3.5, 5)
+            _if_not_positive_raise(0.001, 0.5, 0.1)
+            _if_not_positive_raise(0.1 - 0.01)
+            _if_not_positive_raise(-1 + 2)
 
         except ValueError:
             assert False, f"'_if_not_positive_raise' raised an exception with a positive number"
@@ -224,6 +227,10 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference("t")
             circumference(False)
             circumference(-1)
+            circumference2("t")
+            circumference2(False)
+            circumference2(-1)
+
 
     def test_shapes_not_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -256,8 +263,12 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference(-0.01)
             circumference(-1)
             circumference(-100000000000000000)
+            circumference2(0)
+            circumference2(-0.01)
+            circumference2(-1)
+            circumference2(-100000000000000000)
 
-    def test_pythag_leg_raise_errors(self):
+    def test_pythag_leg_raise(self):
         with self.assertRaises(ValueError):
             pythag_leg(2, 5)
             pythag_leg(2, 5.7)

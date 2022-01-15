@@ -10,7 +10,7 @@ def power_calc(E, t):
         The energy value in the equation.
 
     t : int or float
-        The time value of the equation.
+        The time value of the equation (seconds).
 
     Returns
     -------
@@ -42,7 +42,7 @@ def energy_calc(p, t):
         The power value of the equation.
 
     t: Int or float
-        The time value of the equation.
+        The time value of the equation (seconds).
 
     Returns
     -------
