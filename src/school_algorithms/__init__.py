@@ -67,6 +67,12 @@ circumference2
     A function that calculates the circumference of a circle
     using the diameter
 
+circumference2
+    A function that calculates the circumference of a circle
+    using the diameter
+
+square_pyramid
+    A function that calculates the volume of a square based pyramid
 """
 
 from .circle import *
