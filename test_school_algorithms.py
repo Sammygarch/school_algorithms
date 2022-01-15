@@ -73,6 +73,9 @@ class TestPrivFunc(unittest.TestCase):
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
 
     def test_if_not_int_or_float_raise_with_float_and_int(self):
+        a = 7.4
+        b = -3.4
+        c = 4
         try:
             _if_not_int_or_float_raise(4, 5.0)
             _if_not_int_or_float_raise(-0.00)
@@ -82,12 +85,16 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_or_float_raise(4.0, 5)
             _if_not_int_or_float_raise(5.0+5)
             _if_not_int_or_float_raise(5.0, 6, -5.9)
+            _if_not_int_or_float_raise(a, b, c)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
 
 
     def test_if_not_positive_raise(self):
+        a = -1
+        b = -9
+        c = -6.4
         with self.assertRaises(ValueError):
             _if_not_positive_raise(-4)
             _if_not_positive_raise(-4.0)
@@ -95,8 +102,12 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_positive_raise(-4, 5.0, 6)
             _if_not_positive_raise(0.0, -0.0)
             _if_not_positive_raise(-0.5)
+            _if_not_positive_raise(a, b, c)
 
     def test_if_not_positive_raise_for_no_raise(self):
+        a = 6.0
+        b = 4.5
+        c = 7.3
         try:
             _if_not_positive_raise(4)
             _if_not_positive_raise(4.0)
@@ -105,6 +116,7 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_positive_raise(0.001, 0.5, 0.1)
             _if_not_positive_raise(0.1 - 0.01)
             _if_not_positive_raise(-1 + 2)
+            _if_not_positive_raise(a, b, c)
 
         except ValueError:
             assert False, f"'_if_not_positive_raise' raised an exception with a positive number"
@@ -112,6 +124,8 @@ class TestPrivFunc(unittest.TestCase):
 
 class TestPhysicsAlgos(unittest.TestCase):
     def test_power_calc(self):
+        a = 4
+        b = 2
         self.assertEqual(power_calc(4, 2), 2.0)
         self.assertEqual(power_calc(-4, 2), -2.0)
         self.assertEqual(power_calc(4.0, 2), 2.0)
@@ -119,8 +133,11 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(power_calc(-4.0, 2.0), -2.0)
         self.assertEqual(power_calc(-4.0, -2.0), 2.0)
         self.assertEqual(power_calc(4, -2), -2.0)
+        self.assertEqual(power_calc(a, b), 2.0)
 
     def test_energy_calc(self):
+        a = 2
+        b = 4
         self.assertEqual(energy_calc(4, 2), 8)
         self.assertEqual(energy_calc(-4, 2), -8)
         self.assertEqual(energy_calc(4.0, 2), 8)
@@ -128,6 +145,7 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(energy_calc(-4.0, 2.0), -8)
         self.assertEqual(energy_calc(-4.0, -2.0), 8)
         self.assertEqual(energy_calc(4, -2), -8)
+        self.assertEqual(energy_calc(a, b), 8)
 
 
     def test_time_calc(self):
