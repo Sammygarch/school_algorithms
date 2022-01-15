@@ -18,6 +18,9 @@ from src.school_algorithms import (circle_area,
 
 class TestPrivFunc(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
+        a = "t"
+        b = True
+        c = [1, 3, 4]
         with self.assertRaises(ValueError):
             _if_not_int_or_float_raise("hello")
             _if_not_int_or_float_raise("1")
@@ -33,8 +36,12 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_or_float_raise(("hello", True, 3))
             _if_not_int_or_float_raise(("hello", True, 3))
             _if_not_int_or_float_raise([1, 2, 3])
+            _if_not_int_or_float_raise(a, b, c)
 
     def test_if_not_int_or_float_raise_with_int(self):
+        a = 5
+        b = 10
+        c = 4
         try:
             _if_not_int_or_float_raise(5)
             _if_not_int_or_float_raise(0)
@@ -43,11 +50,15 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_or_float_raise(5, 6, -4)
             _if_not_int_or_float_raise(5, 5, 4, 3)
             _if_not_int_or_float_raise(-5, +5, 40, 23)
+            _if_not_int_or_float_raise(a, b, c)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with an int"
 
     def test_if_not_int_or_float_raise_with_float(self):
+        a = 5.7
+        b = -3.0
+        c = 0.0
         try:
             _if_not_int_or_float_raise(5.0)
             _if_not_int_or_float_raise(4.5)
@@ -56,6 +67,7 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_or_float_raise(5.0, 6.3, -5.9)
             _if_not_int_or_float_raise(-5.0, -6.3, -5.9, 7.3)
             _if_not_int_or_float_raise(5.0, 3.5, 7.1)
+            _if_not_int_or_float_raise(a, b, c)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
