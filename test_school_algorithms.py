@@ -149,6 +149,8 @@ class TestPhysicsAlgos(unittest.TestCase):
 
 
     def test_time_calc(self):
+        a = 2
+        b = 4
         self.assertEqual(time_calc(2, 4), 2.0)
         self.assertEqual(time_calc(2, -4), -2.0)
         self.assertEqual(time_calc(2, 4.0), 2.0)
@@ -156,30 +158,40 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(time_calc(2.0, -4), -2.0)
         self.assertEqual(time_calc(-2.0, -4.0), 2.0)
         self.assertEqual(time_calc(2, -4), -2.0)
+        self.assertEqual(time_calc(a, b), 2.0)
 
     def test_epe_calc(self):
+        a = 4
+        b = 2
         self.assertEqual(epe_calc(5, 10), 250)
         self.assertEqual(epe_calc(10, 10), 500)
         self.assertEqual(epe_calc(10.5, 10), 525)
         self.assertEqual(epe_calc(10.5, 6.5), 221.8125)
         self.assertEqual(epe_calc(10, 10), 500)
+        self.assertEqual(epe_calc(a, b), 8)
 
 
 class TestMathsAlgos(unittest.TestCase):
     def test_pythag_hypot(self):
+        a = 4
+        b = 2
         self.assertEqual(pythag_hypot(4, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2.0), 4.47213595499958)
         self.assertEqual(pythag_hypot(10, 5), 11.180339887498949)
         self.assertEqual(pythag_hypot(10.5, 5), 11.629703349613008)
         self.assertEqual(pythag_hypot(2, 7), 7.280109889280518)
+        self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
 
     def test_pythag_leg(self):
+        a = 4
+        b = 2
         self.assertEqual(pythag_leg(7, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2.0), 6.708203932499369)
         self.assertEqual(pythag_leg(11, 5), 9.797958971132712)
         self.assertEqual(pythag_leg(11, 5), 9.797958971132712)
+        self.assertEqual(pythag_leg(a, b), 3.4641016151377544)
 
     def test_triangle_area(self):
         self.assertEqual(triangle_area(4, 2), 4.0)
