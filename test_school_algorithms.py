@@ -13,7 +13,8 @@ from src.school_algorithms import (circle_area,
                                    right_rect_pyramid,
                                    epe_calc,
                                    circumference,
-                                   circumference2)
+                                   circumference2,
+                                   square_pyramid)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -228,6 +229,11 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(circumference2(14), 43.982297150257104)
         self.assertEqual(circumference2(14.0), 43.982297150257104)
         self.assertEqual(circumference2(12.5), 39.269908169872416)
+
+    def test_square_pyramid(self):
+        self.assertEqual(square_pyramid(5, 6), 50)
+        self.assertEqual(square_pyramid(4.4, 6), 38.720000000000006)
+        self.assertEqual(square_pyramid(4.4, 8), 51.62666666666667)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
