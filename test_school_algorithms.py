@@ -278,6 +278,10 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference2("t")
             circumference2(False)
             circumference2(-1)
+            square_pyramid("t", "e")
+            square_pyramid(False, True)
+            square_pyramid(False, "t")
+            square_pyramid(-1, "t")
 
 
     def test_shapes_not_positive_raise(self):
@@ -315,6 +319,10 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference2(-0.01)
             circumference2(-1)
             circumference2(-100000000000000000)
+            square_pyramid(0, 0)
+            square_pyramid(-0.01, -0.1)
+            square_pyramid(-0.0, -7)
+            square_pyramid(-10000000000, -70000000000)
 
     def test_pythag_leg_raise(self):
         with self.assertRaises(ValueError):
