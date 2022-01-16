@@ -14,8 +14,8 @@ def circle_area(r):
 
     Returns
     -------
-        Float
-            \u03C0 * (r**2)
+    Float
+        \u03C0 * (r**2)
 
     Raises
     ------

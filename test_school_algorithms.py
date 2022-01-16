@@ -14,7 +14,8 @@ from src.school_algorithms import (circle_area,
                                    epe_calc,
                                    circumference,
                                    circumference2,
-                                   square_pyramid)
+                                   square_pyramid,
+                                   lcm)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -122,7 +123,6 @@ class TestPrivFunc(unittest.TestCase):
         except ValueError:
             assert False, f"'_if_not_positive_raise' raised an exception with a positive number"
 
-
 class TestPhysicsAlgos(unittest.TestCase):
     def test_power_calc(self):
         a = 4
@@ -172,7 +172,7 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(epe_calc(a, b), 8)
 
 
-class TestMathsAlgos(unittest.TestCase):
+class TestShapeAlgos(unittest.TestCase):
     def test_pythag_hypot(self):
         a = 4
         b = 2
@@ -235,6 +235,12 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(square_pyramid(4.4, 6), 38.720000000000006)
         self.assertEqual(square_pyramid(4.4, 8), 51.62666666666667)
 
+class TestMathsAlgos(unittest.TestCase):
+    def test_lcm(self):
+        self.assertEqual(lcm(5, 9), 45)
+        self.assertEqual(lcm(10, 10), 10)
+        self.assertEqual(lcm(5, 6), 30)
+
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
         with self.assertRaises(ValueError):
@@ -248,7 +254,7 @@ class TestForRaisedErrors(unittest.TestCase):
             time_calc(False, True)
             time_calc(False, "t")
 
-    def test_maths_raised_errors(self):
+    def test_shapes_raised_errors(self):
         with self.assertRaises(ValueError):
             pythag_hypot("t", "e")
             pythag_hypot(False, True)
@@ -323,6 +329,8 @@ class TestForRaisedErrors(unittest.TestCase):
             square_pyramid(-0.01, -0.1)
             square_pyramid(-0.0, -7)
             square_pyramid(-10000000000, -70000000000)
+
+
 
     def test_pythag_leg_raise(self):
         with self.assertRaises(ValueError):

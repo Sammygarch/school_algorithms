@@ -26,8 +26,8 @@ def trapezium_area(c, b, h):
     ------
     ValueError
          If c b or h::
-            Is not an integer or float
-            Is not positive
+            Is not an integer or float.
+            Is not positive.
 
     Examples
     --------

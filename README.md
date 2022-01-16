@@ -31,6 +31,7 @@
 - _A function that calculates the circumference of a circle_
 - _A function that calculates the circumference of a circle using diameter_
 - _A function that calculates the volume of a square based pyramid_
+- _A function that calculates the Lowest Common Multiple_
 
 ### To install:
 ```

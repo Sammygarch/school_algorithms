@@ -20,7 +20,7 @@ def power_calc(E, t):
     Raises
     ------
     ValueError
-        If E or t is not an integer or float
+        If E or t is not an integer or float.
 
     Examples
     --------
@@ -52,7 +52,7 @@ def energy_calc(p, t):
     Raises
     ------
     ValueError
-        If p or t is not an integer or float
+        If p or t is not an integer or float.
 
     Examples
     --------
@@ -84,7 +84,7 @@ def time_calc(p, E):
     Raises
     ------
     ValueError
-        If p or E is not an integer or float
+        If p or E is not an integer or float.
 
     Examples
     --------
@@ -102,10 +102,10 @@ def epe_calc(k, e):
     Parameters
     ----------
     k: int or float
-        The spring constant in the equation
+        The spring constant in the equation.
 
     e: int or float
-        The extension in the equation
+        The extension in the equation.
 
     Returns
     -------
@@ -115,7 +115,7 @@ def epe_calc(k, e):
     Raises
     ------
     ValueError
-        If k or e is not an integer or a float
+        If k or e is not an integer or a float.
 
     Examples
     --------

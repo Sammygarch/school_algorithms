@@ -55,6 +55,8 @@ def square_pyramid(be, h):
     Integer
         ((be**2)*(h/3))
 
+    Raises
+    ------
     ValueError
         If be or h::
             Is not an integer.

@@ -73,11 +73,14 @@ circumference2
 
 square_pyramid
     A function that calculates the volume of a square based pyramid
-"""
 
+lcm
+    A function that calculates the Lowest Common Multiple from 2 numbers
+"""
 from .circle import *
 from .physics import *
 from .pythagorus import *
 from .trapezium import *
 from .triangle import *
 from .pyramid import *
+from .lcm import *
