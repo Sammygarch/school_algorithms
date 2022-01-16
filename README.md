@@ -5,41 +5,42 @@
 [![MIT License][license-shield]][license-url]
 
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a>About The Project</a>
-    </li>
-    <li>
-      <a>Algorithms</a>
-    </li>
-     <li>
-      <a>How to Import</a>
-    </li>
-  </ol>
-</details>
 
-# School Algorithms
-**school_algorithms** is a **Python** module for secondary school maths and physics equations.
-It aims to provide a simple way for secondary school students
-to learn and calculate equations that they often use.
+### Table of Contents
+1. About The Project
+2. Algorithms
+3. How to Install
+4. How to update to latest version
+5. How to Import
+
+# **School Algorithms**
+  ***school_algorithms is a Python module for secondary school maths and physics equations.
+  It aims to provide a simple way for secondary school students
+  to learn and calculate equations that they often use.***
 
 ### Functions include:
-- _A function that calculates power from energy and time
-- _A function that calculates energy from power and time
-- _A function that calculates time from power and energy
-- _A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle
-- _A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle
-- _A function that calculates the area of a triangle
-- _A function that calculates the area of a trapezium
-- _A function that calculates the area of a circle
-- _A function that calculates the volume of a right rectangle pyramid
-- _A function that calculates the circumference of a circle
-- _A function that calculates the circumference of a circle using diameter
-- _A function that calculates the volume of a square based pyramid
+- _A function that calculates power from energy and time_
+- _A function that calculates energy from power and time_
+- _A function that calculates time from power and energy_
+- _A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle_
+- _A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle_
+- _A function that calculates the area of a triangle_
+- _A function that calculates the area of a trapezium_
+- _A function that calculates the area of a circle_
+- _A function that calculates the volume of a right rectangle pyramid_
+- _A function that calculates the circumference of a circle_
+- _A function that calculates the circumference of a circle using diameter_
+- _A function that calculates the volume of a square based pyramid_
 
-#### To import:
+### To install:
+```
+python3 -m pip install school_algorithms
+```
+### To update to latest version:
+```
+python3 -m pip --upgrade school_algorithms
+```
+### To import:
 ```
 import school_algorithms
 ```
