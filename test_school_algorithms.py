@@ -206,7 +206,6 @@ class TestShapeAlgos(unittest.TestCase):
         self.assertEqual(trapezium_area(4.0, 5.0, 6), 27.0)
         self.assertEqual(trapezium_area(4.0, 5.0, 6.0), 27.0)
 
-
     def test_cirle_area(self):
         self.assertEqual(circle_area(10), 314.1592653589793)
         self.assertEqual(circle_area(10.0), 314.1592653589793)
