@@ -289,6 +289,13 @@ class TestForRaisedErrors(unittest.TestCase):
             square_pyramid(False, "t")
             square_pyramid(-1, "t")
 
+    def test_maths_raised_errors(self):
+        with self.assertRaises(ValueError):
+            lcm("t", "e")
+            lcm(False, True)
+            lcm(False, "t")
+            lcm(-1, "t")
+
 
     def test_shapes_not_positive_raise(self):
         with self.assertRaises(ValueError):
