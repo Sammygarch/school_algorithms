@@ -76,6 +76,9 @@ square_pyramid
 
 lcm
     A function that calculates the Lowest Common Multiple from 2 numbers
+
+lcm_3_nums
+    A function that calculates the Lowest Common Multiple from 3 numbers
 """
 from .circle import *
 from .physics import *

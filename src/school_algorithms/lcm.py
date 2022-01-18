@@ -25,4 +25,30 @@ def lcm(a, b):
     """
     _if_not_int_raise(a, b)
     gcd = _gcd(a, b)
-    return (a * b) / gcd
+    return int((a * b) / gcd)
+
+def lcm_3_nums(a, b, c):
+    """Calculates the Lowest Common Multiple from 3 numbers.
+
+    Parameters
+    ----------
+    a, b, c: int
+
+    Returns
+    -------
+    Int
+        The Lowest Common Multiple (lcm) of a, b and c.
+
+    Raises
+    ------
+    ValueError
+        If a, b or c  is not an integer
+
+    Examples
+    --------
+    >>> lcm(5, 9, 10)
+    90
+    """
+    _if_not_int_raise(a, b, c)
+    ab_lcm = lcm(a, b)
+    return int(lcm(ab_lcm, c))

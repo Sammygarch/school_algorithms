@@ -15,7 +15,7 @@ from src.school_algorithms import (circle_area,
                                    circumference,
                                    circumference2,
                                    square_pyramid,
-                                   lcm)
+                                   lcm, lcm_3_nums)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -240,6 +240,10 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(lcm(10, 10), 10)
         self.assertEqual(lcm(5, 6), 30)
         self.assertEqual(lcm(7, 6), 42)
+
+    def test_3_num_lcm(self):
+        self.assertEqual(lcm_3_nums(5, 9, 10), 90)
+        self.assertEqual(lcm_3_nums(5, 9, 11), 495)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
