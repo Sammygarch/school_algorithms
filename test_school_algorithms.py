@@ -294,6 +294,7 @@ class TestForRaisedErrors(unittest.TestCase):
             lcm(False, True)
             lcm(False, "t")
             lcm(-1, "t")
+            lcm(1.5, 5.5)
 
 
     def test_shapes_not_positive_raise(self):
