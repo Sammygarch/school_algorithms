@@ -239,6 +239,7 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(lcm(5, 9), 45)
         self.assertEqual(lcm(10, 10), 10)
         self.assertEqual(lcm(5, 6), 30)
+        self.assertEqual(lcm(7, 6), 42)
 
 class TestForRaisedErrors(unittest.TestCase):
     def test_physics_raised_errors(self):
