@@ -95,3 +95,8 @@ def circumference2(d):
     _if_not_int_or_float_raise(d)
     _if_not_positive_raise(d)
     return _pi * d
+
+  def area_of_sector(r, a):
+      _if_not_int_or_float_raise(r, a)
+      _if_not_positive_raise(r, a)
+      return a/360 * _pi * r**2
