@@ -79,6 +79,9 @@ lcm
 
 lcm_3_nums
     A function that calculates the Lowest Common Multiple from 3 numbers
+
+area_of_sector
+    A function that calculates the area of a sector in a circle
 """
 from .circle import *
 from .physics import *
