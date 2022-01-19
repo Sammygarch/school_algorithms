@@ -1,7 +1,8 @@
 import unittest
 
 from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                                        _if_not_positive_raise)
+                                                        _if_not_positive_raise,
+                                                        _if_not_int_raise)
 from src.school_algorithms import (circle_area,
                                    power_calc,
                                    energy_calc,
@@ -123,10 +124,39 @@ class TestPrivFunc(unittest.TestCase):
         except ValueError:
             assert False, f"'_if_not_positive_raise' raised an exception with a positive number"
 
+    def test_if_not_int_raise_with_int(self):
+        a = 7
+        b = -3
+        c = 4
+        try:
+            _if_not_int_raise(4, 5)
+            _if_not_int_raise(-0)
+            _if_not_int_raise(4, 7, 5)
+            _if_not_int_raise(4, 5, -6)
+            _if_not_int_raise(4, 5)
+            _if_not_int_raise(5+5)
+            _if_not_int_raise(5, 6, -5)
+            _if_not_int_raise(a, b, c)
+
+        except ValueError:
+            assert False, f"'_if_not_int_raise' raised an exception with a float"
+
+    def test_if_not_int_raise(self):
+        a = -1
+        b = -9
+        c = -6.4
+        with self.assertRaises(ValueError):
+            _if_not_positive_raise(-4)
+            _if_not_positive_raise(-4.0)
+            _if_not_positive_raise(-4.0, 2)
+            _if_not_positive_raise(-4, 5.0, 6)
+            _if_not_positive_raise(0.0, -0.0)
+            _if_not_positive_raise(-0.5)
+            _if_not_positive_raise(a, b, c)
+
 class TestPhysicsAlgos(unittest.TestCase):
     def test_power_calc(self):
-        a = 4
-        b = 2
+        a, b = 4, 2
         self.assertEqual(power_calc(4, 2), 2.0)
         self.assertEqual(power_calc(-4, 2), -2.0)
         self.assertEqual(power_calc(4.0, 2), 2.0)
@@ -137,8 +167,7 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(power_calc(a, b), 2.0)
 
     def test_energy_calc(self):
-        a = 2
-        b = 4
+        a, b = 2, 4
         self.assertEqual(energy_calc(4, 2), 8)
         self.assertEqual(energy_calc(-4, 2), -8)
         self.assertEqual(energy_calc(4.0, 2), 8)
@@ -150,8 +179,7 @@ class TestPhysicsAlgos(unittest.TestCase):
 
 
     def test_time_calc(self):
-        a = 2
-        b = 4
+        a, b = 2, 4
         self.assertEqual(time_calc(2, 4), 2.0)
         self.assertEqual(time_calc(2, -4), -2.0)
         self.assertEqual(time_calc(2, 4.0), 2.0)
@@ -260,7 +288,7 @@ class TestForRaisedErrors(unittest.TestCase):
             time_calc(False, True)
             time_calc(False, "t")
 
-    def test_shapes_raised_errors(self):
+    def test_pythag_raised_errors(self):
         with self.assertRaises(ValueError):
             pythag_hypot("t", "e")
             pythag_hypot(False, True)
@@ -270,30 +298,43 @@ class TestForRaisedErrors(unittest.TestCase):
             pythag_leg(False, True)
             pythag_leg(False, "t")
             pythag_leg(-1, "t")
+
+    def test_triangle_not_positive_raise(self):
+        with self.assertRaises(ValueError):
             triangle_area("t", "e")
             triangle_area(False, True)
             triangle_area(False, "t")
             triangle_area(-1, "t")
+
+    def test_trapezium_not_positive_raise(self):
+        with self.assertRaises(ValueError):
             trapezium_area("t", "e", "s")
             trapezium_area(False, True, False)
             trapezium_area(False, "t", False)
             trapezium_area(-4, "t", 6)
-            circle_area("t")
-            circle_area(False)
-            circle_area(-1)
+
+    def test_pyramid_raised_errors(self):
+        with self.assertRaises(ValueError):
             right_rect_pyramid(False, True, False)
             right_rect_pyramid(False, "t", False)
             right_rect_pyramid(1, "t", 5)
+            square_pyramid("t", "e")
+            square_pyramid(False, True)
+            square_pyramid(False, "t")
+            square_pyramid(-1, "t")
+
+    def test_circle_raise_errors(self):
+        with self.assertRaises(ValueError):
+            circle_area("t")
+            circle_area(False)
+            circle_area(-1)
             circumference("t")
             circumference(False)
             circumference(-1)
             circumference2("t")
             circumference2(False)
             circumference2(-1)
-            square_pyramid("t", "e")
-            square_pyramid(False, True)
-            square_pyramid(False, "t")
-            square_pyramid(-1, "t")
+
 
     def test_maths_raised_errors(self):
         with self.assertRaises(ValueError):
@@ -304,7 +345,7 @@ class TestForRaisedErrors(unittest.TestCase):
             lcm(1.5, 5.5)
 
 
-    def test_shapes_not_positive_raise(self):
+    def test_pythag_not_positive_raise(self):
         with self.assertRaises(ValueError):
             pythag_hypot(0, 0)
             pythag_hypot(-0.1, -0.01)
@@ -314,23 +355,39 @@ class TestForRaisedErrors(unittest.TestCase):
             pythag_leg(-0.01, -0.1)
             pythag_leg(-0.0, -7 )
             pythag_leg(-1000000000, -70000000000000 )
+
+    def test_triangle_not_positive_raise(self):
+        with self.assertRaises(ValueError):
             triangle_area(0, 0)
             triangle_area(-0.01, -0.1)
             triangle_area(-0.0, -7)
             triangle_area(-10000000000, -70000000000)
+
+    def test_trapezium_not_positive_raise(self):
+        with self.assertRaises(ValueError):
             trapezium_area(0, 0, 0)
             trapezium_area(-0.01, -0.1, 0)
             trapezium_area(-0.0, -7, 0)
             trapezium_area(-200000000, -700000, -8.4)
-            circle_area(0)
-            circle_area(-0.01)
-            circle_area(-1)
-            circle_area(-100000000000000000)
+
+    def test_pyramid_not_positibe_raise(self):
+        with self.assertRaises(ValueError):
             right_rect_pyramid(0, 0, 0)
             right_rect_pyramid(-0.01, -0.1, 0)
             right_rect_pyramid(-0.0, -7, 0)
             right_rect_pyramid(-20000, -700000, -100000)
             right_rect_pyramid(20000, 700000, -100000)
+            square_pyramid(0, 0)
+            square_pyramid(-0.01, -0.1)
+            square_pyramid(-0.0, -7)
+            square_pyramid(-10000000000, -70000000000)
+
+    def test_circle_not_positibe_raise(self):
+        with self.assertRaises(ValueError):
+            circle_area(0)
+            circle_area(-0.01)
+            circle_area(-1)
+            circle_area(-100000000000000000)
             circumference(0)
             circumference(-0.01)
             circumference(-1)
@@ -339,10 +396,7 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference2(-0.01)
             circumference2(-1)
             circumference2(-100000000000000000)
-            square_pyramid(0, 0)
-            square_pyramid(-0.01, -0.1)
-            square_pyramid(-0.0, -7)
-            square_pyramid(-10000000000, -70000000000)
+
 
 
 
