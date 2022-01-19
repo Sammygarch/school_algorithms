@@ -97,6 +97,32 @@ def circumference2(d):
     return _pi * d
 
   def area_of_sector(r, a):
+      """Calculates the circumference of a cirle using the formula:
+          \u03C0 * (r squared)
+
+      Parameters
+      ----------
+      d: int or float
+          The diameter in the equation.
+
+      Returns
+      -------
+          Float
+              \u03C0 * d
+
+      Raises
+      ------
+      ValueError
+          If d::
+              Is not an integer or float.
+              Is not positive.
+
+      Examples
+      --------
+      >>> school_algorithms.circumference(10)
+      31.415926535898
+
+      """
       _if_not_int_or_float_raise(r, a)
       _if_not_positive_raise(r, a)
       return a/360 * _pi * r**2
