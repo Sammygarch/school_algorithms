@@ -120,7 +120,7 @@ def circumference2(d):
       Examples
       --------
       >>> school_algorithms.circumference(10)
-      31.415926535898
+      8.7266462599717
 
       """
       _if_not_int_or_float_raise(r, a)
