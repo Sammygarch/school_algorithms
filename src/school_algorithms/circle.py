@@ -122,8 +122,8 @@ def area_of_sector(r, a):
 
     Examples
     --------
-    >>> school_algorithms.circumference(5, 40)
-    8.7266462599717
+    >>> school_algorithms.area_of_sector(5, 40)
+    8.726646259971647
 
     """
     _if_not_int_or_float_raise(r, a)

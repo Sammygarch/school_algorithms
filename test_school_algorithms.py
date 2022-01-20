@@ -16,7 +16,8 @@ from src.school_algorithms import (circle_area,
                                    circumference,
                                    circumference2,
                                    square_pyramid,
-                                   lcm, lcm_3_nums)
+                                   lcm, lcm_3_nums,
+                                   area_of_sector)
 
 
 class TestPrivFunc(unittest.TestCase):
@@ -255,6 +256,16 @@ class TestShapeAlgos(unittest.TestCase):
         self.assertEqual(circle_area(10), 314.1592653589793)
         self.assertEqual(circle_area(10.0), 314.1592653589793)
         self.assertEqual(circle_area(2.5), 19.634954084936208)
+        self.assertEqual(circle_area(2.50), 19.634954084936208)
+        self.assertEqual(circle_area(12), 452.3893421169302)
+        self.assertEqual(circle_area(12.0), 452.3893421169302)
+        self.assertEqual(circle_area(343234), 370109707142.3578)
+        self.assertEqual(circle_area(343234.0), 370109707142.3578)
+        self.assertEqual(circle_area(4.75737), 71.1023134978348)
+
+    def test_area_of_sector(self):
+        self.assertEqual(area_of_sector(5, 40), 8.726646259971647)
+
 
     def test_right_rect_pyramid(self):
         self.assertEqual(right_rect_pyramid(3, 4, 7), 28.0)
@@ -399,7 +410,7 @@ class TestForRaisedErrors(unittest.TestCase):
             square_pyramid(-0.0, -7)
             square_pyramid(-10000000000, -70000000000)
 
-    def test_circle_not_positibe_raise(self):
+    def test_circle_not_positive_raise(self):
         with self.assertRaises(ValueError):
             circle_area(0)
             circle_area(-0.01)
@@ -413,8 +424,6 @@ class TestForRaisedErrors(unittest.TestCase):
             circumference2(-0.01)
             circumference2(-1)
             circumference2(-100000000000000000)
-
-
 
 
     def test_pythag_leg_raise(self):
