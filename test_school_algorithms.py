@@ -136,6 +136,7 @@ class TestPrivFunc(unittest.TestCase):
             _if_not_int_raise(4, 5)
             _if_not_int_raise(5+5)
             _if_not_int_raise(5, 6, -5)
+            _if_not_int_raise(-5, -6, -5)
             _if_not_int_raise(a, b, c)
 
         except ValueError:
