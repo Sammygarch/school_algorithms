@@ -142,17 +142,25 @@ class TestPrivFunc(unittest.TestCase):
             assert False, f"'_if_not_int_raise' raised an exception with a float"
 
     def test_if_not_int_raise(self):
-        a = -1
-        b = -9
+        a = 1.3
+        b = 9
         c = -6.4
         with self.assertRaises(ValueError):
-            _if_not_positive_raise(-4)
-            _if_not_positive_raise(-4.0)
-            _if_not_positive_raise(-4.0, 2)
-            _if_not_positive_raise(-4, 5.0, 6)
-            _if_not_positive_raise(0.0, -0.0)
-            _if_not_positive_raise(-0.5)
-            _if_not_positive_raise(a, b, c)
+            _if_not_int_raise("hello")
+            _if_not_int_raise("1")
+            _if_not_int_raise(True)
+            _if_not_int_raise(5, True)
+            _if_not_int_raise(True, 5)
+            _if_not_int_raise(1, 5, 5, 2, 3, 4, 5, 6, 4, "hello")
+            _if_not_int_raise(True, "hello")
+            _if_not_int_raise("hello", 5)
+            _if_not_int_raise(["hello", 3, True], 5   )
+            _if_not_int_raise(["hello", 3, True])
+            _if_not_int_raise({"sammy" : 1, "test": True})
+            _if_not_int_raise(("hello", True, 3))
+            _if_not_int_raise(("hello", True, 3))
+            _if_not_int_raise([1, 2, 3])
+            _if_not_int_raise(a, b, c)
 
 class TestPhysicsAlgos(unittest.TestCase):
     def test_power_calc(self):
