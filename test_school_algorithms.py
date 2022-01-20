@@ -174,6 +174,8 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(power_calc(-4.0, -2.0), 2.0)
         self.assertEqual(power_calc(4, -2), -2.0)
         self.assertEqual(power_calc(a, b), 2.0)
+        a, b = 4.0, 2.0
+        self.assertEqual(energy_calc(a, b), 8)
 
     def test_energy_calc(self):
         a, b = 2, 4
@@ -184,6 +186,8 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(energy_calc(-4.0, 2.0), -8)
         self.assertEqual(energy_calc(-4.0, -2.0), 8)
         self.assertEqual(energy_calc(4, -2), -8)
+        self.assertEqual(energy_calc(a, b), 8)
+        a, b = 2.0, 4.0
         self.assertEqual(energy_calc(a, b), 8)
 
 
@@ -197,28 +201,32 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(time_calc(-2.0, -4.0), 2.0)
         self.assertEqual(time_calc(2, -4), -2.0)
         self.assertEqual(time_calc(a, b), 2.0)
+        a, b = 2.0, 4.0
+        self.assertEqual(time_calc(a, b), 2.0)
 
     def test_epe_calc(self):
-        a = 4
-        b = 2
+        a, b = 4, 2
         self.assertEqual(epe_calc(5, 10), 250)
         self.assertEqual(epe_calc(10, 10), 500)
         self.assertEqual(epe_calc(10.5, 10), 525)
         self.assertEqual(epe_calc(10.5, 6.5), 221.8125)
         self.assertEqual(epe_calc(10, 10), 500)
         self.assertEqual(epe_calc(a, b), 8)
+        a, b = 4.0, 2.0
+        self.assertEqual(epe_calc(a, b), 8)
 
 
 class TestShapeAlgos(unittest.TestCase):
     def test_pythag_hypot(self):
-        a = 4
-        b = 2
+        a, b = 4, 2
         self.assertEqual(pythag_hypot(4, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2), 4.47213595499958)
         self.assertEqual(pythag_hypot(4.0, 2.0), 4.47213595499958)
         self.assertEqual(pythag_hypot(10, 5), 11.180339887498949)
         self.assertEqual(pythag_hypot(10.5, 5), 11.629703349613008)
         self.assertEqual(pythag_hypot(2, 7), 7.280109889280518)
+        self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
+        a, b = 4.0, 2.0
         self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
 
     def test_pythag_leg(self):
