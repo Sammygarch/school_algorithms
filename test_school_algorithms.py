@@ -17,7 +17,8 @@ from src.school_algorithms import (circle_area,
                                    circumference2,
                                    square_pyramid,
                                    lcm, lcm_3_nums,
-                                   area_of_sector)
+                                   area_of_sector,
+                                   lcm_4_nums)
 
 
 class TestPrivFuncs(unittest.TestCase):
@@ -300,7 +301,7 @@ class TestPyramidAlgos(unittest.TestCase):
         self.assertEqual(right_rect_pyramid(10.0, 5.0, 6.0), 100)
         self.assertEqual(right_rect_pyramid(4.4, 2.3, 23), 77.58666666666666)
 
-class TestMathsAlgos(unittest.TestCase):
+class TestLcmAlgos(unittest.TestCase):
     def test_lcm(self):
         self.assertEqual(lcm(5, 9), 45)
         self.assertEqual(lcm(10, 10), 10)
@@ -312,6 +313,12 @@ class TestMathsAlgos(unittest.TestCase):
         self.assertEqual(lcm_3_nums(5, 9, 11), 495)
         self.assertEqual(lcm_3_nums(9, 10, 5), 90)
         self.assertEqual(lcm_3_nums(9, 11, 5), 495)
+
+    def test_4_num_lcm(self):
+        self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
+        self.assertEqual(lcm_4_nums(5, 9, 10, 16), 720)
+        self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
+
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
     def test_power_calc_raised_errors(self):
