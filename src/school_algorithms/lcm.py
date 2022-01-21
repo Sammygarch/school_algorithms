@@ -46,9 +46,34 @@ def lcm_3_nums(a, b, c):
 
     Examples
     --------
-    >>> lcm(5, 9, 10)
+    >>> school_algorithms.lcm_3_nums(5, 9, 10)
     90
     """
     _if_not_int_raise(a, b, c)
     ab_lcm = lcm(a, b)
     return int(lcm(ab_lcm, c))
+
+def lcm_4_nums(a, b, c, d):
+    """Calculates the Lowest Common Multiple from 4 numbers.
+
+    Parameters
+    ----------
+    a, b, c, d: int
+
+    Returns
+    -------
+    Int
+        The Lowest Common Multiple (lcm) of a, b, c and d.
+
+    Raises
+    ------
+    ValueError
+        If a, b, c or d  is not an integer
+
+    Examples
+    --------
+    >>> school_algorithms.lcm_4_nums(5, 9, 10, 15)
+    90
+    """
+    _if_not_int_raise(a, b, c, d)
+    return int(lcm(lcm(lcm(a, b), c), d))
