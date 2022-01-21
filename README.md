@@ -7,11 +7,15 @@
 
 
 ### Table of Contents
-1. About The Project
-2. Algorithms
-3. How to Install
-4. How to update to latest version
-5. How to Import
+> About The Project
+
+> Algorithms
+
+> How to Install
+
+> How to update to latest version
+
+> How to Import
 
 # **School Algorithms**
   ***school_algorithms is a Python module for secondary school maths and physics equations.
