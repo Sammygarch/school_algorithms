@@ -405,7 +405,7 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             lcm(-1, "t")
             lcm(1.5, 5.5)
 
-    def test_lcm_raised_errors(self):
+    def test_lcm_3_nums_raised_errors(self):
         with self.assertRaises(ValueError):
             lcm_3_nums("t", "e", "s")
             lcm_3_nums(False, True, False)
@@ -420,6 +420,7 @@ class TestForPythagRaisedErrors(unittest.TestCase):
             pythag_hypot(-0.1, -0.01)
             pythag_hypot(-7, -0.0)
             pythag_hypot(-70000000000, -100000000)
+            pythag_hypot(70000000000, -100000000)
 
     def test_pythag_leg_not_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -427,6 +428,7 @@ class TestForPythagRaisedErrors(unittest.TestCase):
             pythag_leg(-0.01, -0.1)
             pythag_leg(-0.0, -7 )
             pythag_leg(-1000000000, -70000000000000 )
+            pythag_leg(1000000000, -70000000000000)
 
     def test_pythag_leg_raise(self):
         with self.assertRaises(ValueError):
@@ -444,6 +446,7 @@ class TestForTriangleRaisedErrors(unittest.TestCase):
             triangle_area(-0.01, -0.1)
             triangle_area(-0.0, -7)
             triangle_area(-10000000000, -70000000000)
+            triangle_area(10000000000, -70000000000)
 
 class TestForTrapeziumRaisedErrors(unittest.TestCase):
     def test_trapezium_not_positive_raise(self):
@@ -452,6 +455,7 @@ class TestForTrapeziumRaisedErrors(unittest.TestCase):
             trapezium_area(-0.01, -0.1, 0)
             trapezium_area(-0.0, -7, 0)
             trapezium_area(-200000000, -700000, -8.4)
+            trapezium_area(200000000, 700000, -8.4)
 
 class TestForPyramidRaisedErrors(unittest.TestCase):
     def test_right_rect_pyramid_not_positive_raise(self):
@@ -468,6 +472,7 @@ class TestForPyramidRaisedErrors(unittest.TestCase):
             square_pyramid(-0.01, -0.1)
             square_pyramid(-0.0, -7)
             square_pyramid(-10000000000, -70000000000)
+            square_pyramid(-0.0, 5)
 
 class TestForCircleRaisedErrors(unittest.TestCase):
     def test_circle_area_not_positive_raise(self):
@@ -476,6 +481,7 @@ class TestForCircleRaisedErrors(unittest.TestCase):
             circle_area(-0.01)
             circle_area(-1)
             circle_area(-100000000000000000)
+            circle_area(-0.0)
 
     def test_circumference_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -483,6 +489,7 @@ class TestForCircleRaisedErrors(unittest.TestCase):
             circumference(-0.01)
             circumference(-1)
             circumference(-100000000000000000)
+            circumference(-0.0)
 
     def test_circumference2_positive_raise(self):
         with self.assertRaises(ValueError):
@@ -490,10 +497,7 @@ class TestForCircleRaisedErrors(unittest.TestCase):
             circumference2(-0.01)
             circumference2(-1)
             circumference2(-100000000000000000)
-
-
-
-
+            circumference2(-0.0)
 
 if __name__ == '__main__':
     unittest.main()
