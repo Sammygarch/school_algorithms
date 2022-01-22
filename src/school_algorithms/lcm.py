@@ -20,7 +20,7 @@ def lcm(a, b):
 
     Examples
     --------
-    >>> lcm(5, 7)
+    >>> school_algorithms.lcm(5, 7)
     35
     """
     _if_not_int_raise(a, b)

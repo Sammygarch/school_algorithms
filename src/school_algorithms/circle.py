@@ -88,7 +88,7 @@ def circumference2(d):
 
     Examples
     --------
-    >>> school_algorithms.circumference(10)
+    >>> school_algorithms.circumference2(10)
     31.415926535898
 
     """
