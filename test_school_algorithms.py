@@ -91,6 +91,10 @@ class TestPrivFuncs(unittest.TestCase):
             _if_not_int_or_float_raise(5.0+5)
             _if_not_int_or_float_raise(5.0, 6, -5.9)
             _if_not_int_or_float_raise(a, b, c)
+            a = 7.40
+            b = -3.40
+            c = 4.0
+            _if_not_int_or_float_raise(a, b, c)
 
         except ValueError:
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
