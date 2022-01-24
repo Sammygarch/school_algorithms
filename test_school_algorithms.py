@@ -322,6 +322,7 @@ class TestLcmAlgos(unittest.TestCase):
         self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
         self.assertEqual(lcm_4_nums(5, 9, 10, 16), 720)
         self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
+        self.assertEqual(lcm_4_nums(5, 10, 15, 20), 60)
 
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
