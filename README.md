@@ -30,13 +30,16 @@
 - _A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle_
 - _A function that calculates the area of a triangle_
 - _A function that calculates the area of a trapezium_
-- _A function that calculates the area of a circle_
 - _A function that calculates the volume of a right rectangle pyramid_
+- _A function that calculates the area of a circle_
 - _A function that calculates the circumference of a circle_
 - _A function that calculates the circumference of a circle using diameter_
-- _A function that calculates the volume of a square based pyramid_
-- _A function that calculates the Lowest Common Multiple from 3 numbers_
 - _A function that calculates the area of a sector in a circle_
+- _A function that calculates the volume of a square based pyramid_
+- _A function that calculates the Lowest Common Multiple from 2 numbers_
+- _A function that calculates the Lowest Common Multiple from 3 numbers_
+- _A function that calculates the Lowest Common Multiple from 4 numbers_
+
 
 ### To install:
 ```
