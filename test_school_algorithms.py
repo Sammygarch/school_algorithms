@@ -236,8 +236,7 @@ class TestShapeAlgos(unittest.TestCase):
         self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
 
     def test_pythag_leg(self):
-        a = 4
-        b = 2
+        a, b = 4, 2
         self.assertEqual(pythag_leg(7, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2), 6.708203932499369)
         self.assertEqual(pythag_leg(7.0, 2.0), 6.708203932499369)
@@ -246,19 +245,24 @@ class TestShapeAlgos(unittest.TestCase):
         self.assertEqual(pythag_leg(a, b), 3.4641016151377544)
 
     def test_triangle_area(self):
+        a, b = 4, 2
         self.assertEqual(triangle_area(4, 2), 4.0)
         self.assertEqual(triangle_area(4.0, 2), 4.0)
         self.assertEqual(triangle_area(4.0, 2.0), 4.0)
         self.assertEqual(triangle_area(4.5, 2.0), 4.5)
+        self.assertEqual(triangle_area(a, b), 4.0)
 
     def test_trapezium_area(self):
+        a, b, c = 4, 5, 6
         self.assertEqual(trapezium_area(4, 5, 6), 27.0)
         self.assertEqual(trapezium_area(4.0, 5, 6), 27.0)
         self.assertEqual(trapezium_area(4.0, 5.0, 6), 27.0)
         self.assertEqual(trapezium_area(4.0, 5.0, 6.0), 27.0)
+        self.assertEqual(trapezium_area(a, b, c), 27.0)
 
 class TestCircleAlgos(unittest.TestCase):
     def test_cirle_area(self):
+        a = 10
         self.assertEqual(circle_area(10), 314.1592653589793)
         self.assertEqual(circle_area(10.0), 314.1592653589793)
         self.assertEqual(circle_area(2.5), 19.634954084936208)
@@ -268,42 +272,55 @@ class TestCircleAlgos(unittest.TestCase):
         self.assertEqual(circle_area(343234), 370109707142.3578)
         self.assertEqual(circle_area(343234.0), 370109707142.3578)
         self.assertEqual(circle_area(4.75737), 71.1023134978348)
+        self.assertEqual(circle_area(a), 314.1592653589793)
 
     def test_area_of_sector(self):
+        a, b = 5, 40
         self.assertEqual(area_of_sector(5, 40), 8.726646259971647)
         self.assertEqual(area_of_sector(5.0, 40.0), 8.726646259971647)
         self.assertEqual(area_of_sector(10, 0.1), 0.08726646259971647)
         self.assertEqual(area_of_sector(10.0, 0.1), 0.08726646259971647)
         self.assertEqual(area_of_sector(10, 5), 4.363323129985823)
+        self.assertEqual(area_of_sector(a, b), 8.726646259971647)
 
 
     def test_circumference(self):
+        a = 5
         self.assertEqual(circumference(5),  31.41592653589793)
         self.assertEqual(circumference(5.0),  31.41592653589793)
         self.assertEqual(circumference(7), 43.982297150257104)
         self.assertEqual(circumference(7.0), 43.982297150257104)
         self.assertEqual(circumference(6.25), 39.269908169872416)
+        self.assertEqual(circumference(a),  31.41592653589793)
 
     def test_circumference2(self):
+        a = 10
         self.assertEqual(circumference2(10), 31.41592653589793)
         self.assertEqual(circumference2(10.0), 31.41592653589793)
         self.assertEqual(circumference2(14), 43.982297150257104)
         self.assertEqual(circumference2(14.0), 43.982297150257104)
         self.assertEqual(circumference2(12.5), 39.269908169872416)
+        self.assertEqual(circumference2(a), 31.41592653589793)
+
 
 class TestPyramidAlgos(unittest.TestCase):
     def test_square_pyramid(self):
+        a, b = 5, 6
         self.assertEqual(square_pyramid(5, 6), 50)
         self.assertEqual(square_pyramid(4.4, 6), 38.720000000000006)
         self.assertEqual(square_pyramid(4.4, 8), 51.62666666666667)
+        self.assertEqual(square_pyramid(a, b), 50)
+
 
     def test_right_rect_pyramid(self):
+        a, b, c = 3, 4, 7
         self.assertEqual(right_rect_pyramid(3, 4, 7), 28)
         self.assertEqual(right_rect_pyramid(3.0, 4.0, 7.0), 28)
         self.assertEqual(right_rect_pyramid(3.0, 4.4, 7.2), 31.680000000000003)
         self.assertEqual(right_rect_pyramid(10, 5, 6), 100)
         self.assertEqual(right_rect_pyramid(10.0, 5.0, 6.0), 100)
         self.assertEqual(right_rect_pyramid(4.4, 2.3, 23), 77.58666666666666)
+        self.assertEqual(right_rect_pyramid(a, b, c), 28)
 
 class TestLcmAlgos(unittest.TestCase):
     def test_lcm(self):
