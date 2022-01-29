@@ -23,9 +23,7 @@ from src.school_algorithms import (circle_area,
 
 class TestPrivFuncs(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
-        a = "t"
-        b = True
-        c = [1, 3, 4]
+        a, b, c = "t", True, [1, 3, 4]
         with self.assertRaises(ValueError):
             _if_not_int_or_float_raise("hello")
             _if_not_int_or_float_raise("1")
@@ -44,9 +42,7 @@ class TestPrivFuncs(unittest.TestCase):
             _if_not_int_or_float_raise(a, b, c)
 
     def test_if_not_int_or_float_raise_with_int(self):
-        a = 5
-        b = 10
-        c = 4
+        a, b, c = 5, 10, 4
         try:
             _if_not_int_or_float_raise(5)
             _if_not_int_or_float_raise(0)
@@ -61,9 +57,7 @@ class TestPrivFuncs(unittest.TestCase):
             assert False, f"'_if_not_int_or_float_raise' raised an exception with an int"
 
     def test_if_not_int_or_float_raise_with_float(self):
-        a = 5.7
-        b = -3.0
-        c = 0.0
+        a, b, c = 5.7, -3.0, 0.0
         try:
             _if_not_int_or_float_raise(5.0)
             _if_not_int_or_float_raise(4.5)
@@ -78,9 +72,7 @@ class TestPrivFuncs(unittest.TestCase):
             assert False, f"'_if_not_int_or_float_raise' raised an exception with a float"
 
     def test_if_not_int_or_float_raise_with_float_and_int(self):
-        a = 7.4
-        b = -3.4
-        c = 4
+        a, b, c = 7.4, -3.4, 4
         try:
             _if_not_int_or_float_raise(4, 5.0)
             _if_not_int_or_float_raise(-0.00)
@@ -91,9 +83,7 @@ class TestPrivFuncs(unittest.TestCase):
             _if_not_int_or_float_raise(5.0+5)
             _if_not_int_or_float_raise(5.0, 6, -5.9)
             _if_not_int_or_float_raise(a, b, c)
-            a = 7.40
-            b = -3.40
-            c = 4.0
+            a, b, c = 7.40, -3.40, 4.0
             _if_not_int_or_float_raise(a, b, c)
 
         except ValueError:
@@ -101,9 +91,7 @@ class TestPrivFuncs(unittest.TestCase):
 
 
     def test_if_not_positive_raise(self):
-        a = -1
-        b = -9
-        c = -6.4
+        a, b, c= -1, -9, -6.4
         with self.assertRaises(ValueError):
             _if_not_positive_raise(-4)
             _if_not_positive_raise(-4.0)
