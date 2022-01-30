@@ -312,16 +312,19 @@ class TestPyramidAlgos(unittest.TestCase):
 
 class TestLcmAlgos(unittest.TestCase):
     def test_lcm(self):
+        a, b = 7, 6
         self.assertEqual(lcm(5, 9), 45)
         self.assertEqual(lcm(10, 10), 10)
         self.assertEqual(lcm(5, 6), 30)
         self.assertEqual(lcm(7, 6), 42)
+        self.assertEqual(lcm(a, b), 42)
 
     def test_3_num_lcm(self):
+        a, b, c = 9, 11, 5
         self.assertEqual(lcm_3_nums(5, 9, 10), 90)
         self.assertEqual(lcm_3_nums(5, 9, 11), 495)
         self.assertEqual(lcm_3_nums(9, 10, 5), 90)
-        self.assertEqual(lcm_3_nums(9, 11, 5), 495)
+        self.assertEqual(lcm_3_nums(a, b, c), 495)
 
     def test_4_num_lcm(self):
         self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
