@@ -327,30 +327,38 @@ class TestLcmAlgos(unittest.TestCase):
         self.assertEqual(lcm_3_nums(a, b, c), 495)
 
     def test_4_num_lcm(self):
+        a, b, c, d = 5, 10, 15, 20
         self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
         self.assertEqual(lcm_4_nums(5, 9, 10, 16), 720)
         self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
         self.assertEqual(lcm_4_nums(5, 10, 15, 20), 60)
+        self.assertEqual(lcm_4_nums(a, b, c, d), 60)
 
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
     def test_power_calc_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = False, "t"
             power_calc("t", "e")
             power_calc(False, True)
             power_calc(False, "t")
+            power_calc(a, b)
 
     def test_energy_calc_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = False, "t"
             energy_calc("t", "e")
             energy_calc(False, True)
             energy_calc(False, "t")
+            energy_calc(a, b)
 
     def test_time_calc_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = False, "t"
             time_calc("t", "e")
             time_calc(False, True)
             time_calc(False, "t")
+            time_calc(a, b)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_raised_errors(self):
