@@ -18,7 +18,8 @@ from src.school_algorithms import (circle_area,
                                    square_pyramid,
                                    lcm, lcm_3_nums,
                                    area_of_sector,
-                                   lcm_4_nums)
+                                   lcm_4_nums,
+                                   lcm_5_nums)
 
 
 class TestPrivFuncs(unittest.TestCase):
@@ -333,6 +334,14 @@ class TestLcmAlgos(unittest.TestCase):
         self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
         self.assertEqual(lcm_4_nums(5, 10, 15, 20), 60)
         self.assertEqual(lcm_4_nums(a, b, c, d), 60)
+
+    def test_5_num_lcm(self):
+        a, b, c, d, e = 5, 10, 15, 20, 30
+        self.assertEqual(lcm_5_nums(5, 9, 10, 15, 16), 720)
+        self.assertEqual(lcm_5_nums(5, 9, 10, 16, 23), 16560)
+        self.assertEqual(lcm_5_nums(12, 13, 15, 75, 20), 3900)
+        self.assertEqual(lcm_5_nums(5, 10, 15, 20, 30), 60)
+        self.assertEqual(lcm_5_nums(a, b, c, d, e), 60)
 
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
