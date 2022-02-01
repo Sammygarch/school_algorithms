@@ -363,50 +363,64 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = -1, "t"
             pythag_hypot("t", "e")
             pythag_hypot(False, True)
             pythag_hypot(False, "t")
             pythag_hypot(-1, "t")
+            pythag_hypot(a, b)
 
     def test_pythag_leg_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = -1, "t"
             pythag_leg("t", "e")
             pythag_leg(False, True)
             pythag_leg(False, "t")
             pythag_leg(-1, "t")
+            pythag_leg(a, b)
 
 class TestForCicleRaisedErrors(unittest.TestCase):
     def test_circle_area_raise_errors(self):
         with self.assertRaises(ValueError):
+            a = -1
             circle_area("t")
             circle_area(False)
             circle_area(-1)
+            circle_area(a)
 
     def test_circumference_raise_errors(self):
         with self.assertRaises(ValueError):
+            a = -1
             circumference("t")
             circumference(False)
             circumference(-1)
+            circumference(a)
 
     def test_circumference2_raise_errors(self):
         with self.assertRaises(ValueError):
+            a = -1
             circumference2("t")
             circumference2(False)
             circumference2(-1)
+            circumference2(a)
 
 class TestForPyramidRaisedErrors(unittest.TestCase):
     def test_right_rect_pyramid_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b, c = 1, "t", 5
             right_rect_pyramid(False, True, False)
             right_rect_pyramid(False, "t", False)
             right_rect_pyramid(1, "t", 5)
+            right_rect_pyramid(a, b ,c)
 
     def test_square_pyramid_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = -1, "t"
             square_pyramid("t", "e")
             square_pyramid(False, True)
             square_pyramid(False, "t")
             square_pyramid(-1, "t")
+            square_pyramid(a, b)
 
 class TestForTrapeziumRaisedErrors(unittest.TestCase):
     def test_trapezium_not_positive_raise(self):
