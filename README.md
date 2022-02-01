@@ -45,7 +45,7 @@
 ```
 python3 -m pip install school_algorithms
 ```
-### To update to latest version:
+### To upgrade to latest version:
 ```
 python3 -m pip --upgrade school_algorithms
 ```
