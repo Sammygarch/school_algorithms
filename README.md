@@ -42,19 +42,41 @@
 
 
 ### To install:
-```
-python3 -m pip install school_algorithms
-```
+
+    >>> python3 -m pip install school_algorithms
+
 ### To upgrade to latest version:
-```
-python3 -m pip --upgrade school_algorithms
-```
+
+    >>> python3 -m pip --upgrade school_algorithms
+
 ### To import:
-```
-import school_algorithms
-```
 
+    >>> import school_algorithms
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+## How to use documentation:
+##### Documentation is in the form of docstrings provided with the code.
+
+##### The docstring examples assume that 'school_algorithms' has been imported:
+
+    >>> import school_algorithms
+
+##### Code snippets are indicated by three greater-than signs:
+
+    >>> x = 42
+    >>> x = x + 1
+
+##### Use the built-in ``help`` function to view a function's docstring:
+
+    >>> help(school_algorithms.power_calc)
 
 
 
