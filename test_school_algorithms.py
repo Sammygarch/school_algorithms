@@ -434,43 +434,54 @@ class TestForPyramidRaisedErrors(unittest.TestCase):
 class TestForTrapeziumRaisedErrors(unittest.TestCase):
     def test_trapezium_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b, c = -4, "t", 6
             trapezium_area("t", "e", "s")
             trapezium_area(False, True, False)
             trapezium_area(False, "t", False)
             trapezium_area(-4, "t", 6)
+            trapezium_area(a, b, c)
 
 class TestForTriangleRaisedErrors(unittest.TestCase):
     def test_triangle_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b = -1, "t"
             triangle_area("t", "e")
             triangle_area(False, True)
             triangle_area(False, "t")
             triangle_area(-1, "t")
+            triangle_area(a, b)
 
 class TestForLcmRaisedErrors(unittest.TestCase):
     def test_lcm_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b = 1.5, 5.5
             lcm("t", "e")
             lcm(False, True)
             lcm(False, "t")
             lcm(-1, "t")
             lcm(1.5, 5.5)
+            lcm(a, b)
+
 
     def test_lcm_3_nums_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b, c = 1.5, 5.5, 5.98
             lcm_3_nums("t", "e", "s")
             lcm_3_nums(False, True, False)
             lcm_3_nums(False, "t", "5")
             lcm_3_nums(-1, "t", True)
             lcm_3_nums(1.5, 5.5, 5.98)
+            lcm_3_nums(a, b, c)
 
     def test_lcm_4_nums_raised_errors(self):
         with self.assertRaises(ValueError):
+            a, b, c, d = 1.5, 5.5, 5.98, 4.5
             lcm_4_nums("t", "e", "s", "t")
             lcm_4_nums(False, True, False, 5)
             lcm_4_nums(False, "t", "5", 1)
             lcm_4_nums(-1, "t", True, False)
             lcm_4_nums(1.5, 5.5, 5.98, 4.5)
+            lcm_4_nums(a, b, c, d)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_not_positive_raise(self):
