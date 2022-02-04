@@ -83,6 +83,9 @@ lcm_3_nums
 lcm_4_nums
     A function that calculates the Lowest Common Multiple from 4 numbers
 
+lcm_5_nums
+    A function that calculates the Lowest Common Multiple from 5 numbers
+
 area_of_sector
     A function that calculates the area of a sector in a circle
 """

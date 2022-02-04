@@ -39,6 +39,7 @@
 - _A function that calculates the Lowest Common Multiple from 2 numbers_
 - _A function that calculates the Lowest Common Multiple from 3 numbers_
 - _A function that calculates the Lowest Common Multiple from 4 numbers_
+- _A function that calculates the Lowest Common Multiple from 5 numbers_
 
 
 ### To install:
@@ -53,15 +54,15 @@
 
     >>> import school_algorithms
 
- 
- 
- 
- 
- 
- 
- 
- 
-        
+
+
+
+
+
+
+
+
+
 ## How to use documentation:
 ##### Documentation is in the form of docstrings provided with the code.
 
