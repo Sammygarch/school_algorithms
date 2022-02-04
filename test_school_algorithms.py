@@ -486,37 +486,45 @@ class TestForLcmRaisedErrors(unittest.TestCase):
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b = 70000000000, -100000000
             pythag_hypot(0, 0)
             pythag_hypot(-0.1, -0.01)
             pythag_hypot(-7, -0.0)
             pythag_hypot(-70000000000, -100000000)
             pythag_hypot(70000000000, -100000000)
+            pythag_hypot(a, b)
 
     def test_pythag_leg_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b = 70000000000, -100000000
             pythag_leg(0, 0)
             pythag_leg(-0.01, -0.1)
             pythag_leg(-0.0, -7 )
             pythag_leg(-1000000000, -70000000000000 )
             pythag_leg(1000000000, -70000000000000)
+            pythag_hypot(a, b)
 
     def test_pythag_leg_raise(self):
         with self.assertRaises(ValueError):
+            a, b = 2, 5
             pythag_leg(2, 5)
             pythag_leg(2, 5.7)
             pythag_leg(2.4, 5.7)
             pythag_leg(1.1, 1.2)
             pythag_leg(0.00001, 0.2)
             pythag_leg(0.9999999999999999999999, 1)
+            pythag_leg(a, b)
 
 class TestForTriangleRaisedErrors(unittest.TestCase):
     def test_triangle_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b = 0, 0
             triangle_area(0, 0)
             triangle_area(-0.01, -0.1)
             triangle_area(-0.0, -7)
             triangle_area(-10000000000, -70000000000)
             triangle_area(10000000000, -70000000000)
+            triangle_area(a, b)
 
 class TestForTrapeziumRaisedErrors(unittest.TestCase):
     def test_trapezium_not_positive_raise(self):
