@@ -529,53 +529,65 @@ class TestForTriangleRaisedErrors(unittest.TestCase):
 class TestForTrapeziumRaisedErrors(unittest.TestCase):
     def test_trapezium_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b, c = 0, 0, 0
             trapezium_area(0, 0, 0)
             trapezium_area(-0.01, -0.1, 0)
             trapezium_area(-0.0, -7, 0)
             trapezium_area(-200000000, -700000, -8.4)
             trapezium_area(200000000, 700000, -8.4)
+            trapezium_area(a, b ,c)
 
 class TestForPyramidRaisedErrors(unittest.TestCase):
     def test_right_rect_pyramid_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a, b, c = 0, 0, 0
             right_rect_pyramid(0, 0, 0)
             right_rect_pyramid(-0.01, -0.1, 0)
             right_rect_pyramid(-0.0, -7, 0)
             right_rect_pyramid(-20000, -700000, -100000)
             right_rect_pyramid(20000, 700000, -100000)
+            right_rect_pyramid(a, b, c)
 
     def test_square_pyramid_not_positive_raise(self):
         with self.assertRaises(ValueError):
+             a, b = 0, 0
             square_pyramid(0, 0)
             square_pyramid(-0.01, -0.1)
             square_pyramid(-0.0, -7)
             square_pyramid(-10000000000, -70000000000)
             square_pyramid(-0.0, 5)
+            square_pyramid(a, b)
 
 class TestForCircleRaisedErrors(unittest.TestCase):
     def test_circle_area_not_positive_raise(self):
         with self.assertRaises(ValueError):
+            a = 0
             circle_area(0)
             circle_area(-0.01)
             circle_area(-1)
             circle_area(-100000000000000000)
             circle_area(-0.0)
+            circle_area(a)
 
     def test_circumference_positive_raise(self):
         with self.assertRaises(ValueError):
+            a = 0
             circumference(0)
             circumference(-0.01)
             circumference(-1)
             circumference(-100000000000000000)
             circumference(-0.0)
+            circumference(a)
 
     def test_circumference2_positive_raise(self):
         with self.assertRaises(ValueError):
+            a = 0
             circumference2(0)
             circumference2(-0.01)
             circumference2(-1)
             circumference2(-100000000000000000)
             circumference2(-0.0)
+            circumference2(a)
 
 if __name__ == '__main__':
     unittest.main()
