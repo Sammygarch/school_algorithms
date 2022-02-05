@@ -1,8 +1,42 @@
 import unittest
 
+class TestImports(unittest.TestCase):
+    def test_priv_imports(self):
+        try:
+            from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
+                                                                   _if_not_positive_raise,
+                                                                   _if_not_int_raise)
+
+        except ImportError:
+            assert False, "A private import failed"
+
+    def test_main_imports(self):
+        try:
+            from src.school_algorithms import (circle_area,
+                                               power_calc,
+                                               energy_calc,
+                                               time_calc,
+                                               pythag_leg,
+                                               pythag_hypot,
+                                               trapezium_area,
+                                               triangle_area,
+                                               right_rect_pyramid,
+                                               epe_calc,
+                                               circumference,
+                                               circumference2,
+                                               square_pyramid,
+                                               lcm, lcm_3_nums,
+                                               area_of_sector,
+                                               lcm_4_nums,
+                                               lcm_5_nums)
+
+        except ImportError:
+            assert False, "A main import failed"
+
 from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
-                                                        _if_not_positive_raise,
-                                                        _if_not_int_raise)
+                                                       _if_not_positive_raise,
+                                                       _if_not_int_raise)
+
 from src.school_algorithms import (circle_area,
                                    power_calc,
                                    energy_calc,
@@ -20,7 +54,6 @@ from src.school_algorithms import (circle_area,
                                    area_of_sector,
                                    lcm_4_nums,
                                    lcm_5_nums)
-
 
 class TestPrivFuncs(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
@@ -550,7 +583,7 @@ class TestForPyramidRaisedErrors(unittest.TestCase):
 
     def test_square_pyramid_not_positive_raise(self):
         with self.assertRaises(ValueError):
-             a, b = 0, 0
+            a, b = 0, 0
             square_pyramid(0, 0)
             square_pyramid(-0.01, -0.1)
             square_pyramid(-0.0, -7)
