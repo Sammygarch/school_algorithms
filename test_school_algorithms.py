@@ -65,6 +65,7 @@ class TestPrivFuncs(unittest.TestCase):
             _if_not_int_or_float_raise(5, True)
             _if_not_int_or_float_raise(True, 5)
             _if_not_int_or_float_raise(1, 5, 5, 2, 3, 4, 5, 6, 4, "hello")
+            _if_not_int_or_float_raise(1.5, 5.3, 2.6, 4.3, 5.5, 6.4, "hello")
             _if_not_int_or_float_raise(True, "hello")
             _if_not_int_or_float_raise("hello", 5)
             _if_not_int_or_float_raise(["hello", 3, True], 5   )
@@ -515,6 +516,16 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             lcm_4_nums(-1, "t", True, False)
             lcm_4_nums(1.5, 5.5, 5.98, 4.5)
             lcm_4_nums(a, b, c, d)
+
+    def test_lcm_5_nums_raised_errors(self):
+        with self.assertRaises(ValueError):
+            a, b, c, d, e = 1.5, 5.5, 5.98, 4.5, 7.8
+            lcm_5_nums("t", "e", "s", "t", "i")
+            lcm_5_nums(False, True, False, 5, 0)
+            lcm_5_nums(False, "t", "5", 1, True)
+            lcm_5_nums(-1, "t", True, False, "e")
+            lcm_5_nums(1.5, 5.5, 5.98, 4.5, 4)
+            lcm_5_nums(a, b, c, d, e)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_not_positive_raise(self):
