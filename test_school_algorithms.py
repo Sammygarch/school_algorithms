@@ -157,19 +157,22 @@ class TestPrivFuncs(unittest.TestCase):
         a = 7
         b = -3
         c = 4
+        d = int(5.6 + 4.4)
         try:
             _if_not_int_raise(4, 5)
             _if_not_int_raise(-0)
             _if_not_int_raise(4, 7, 5)
             _if_not_int_raise(4, 5, -6)
             _if_not_int_raise(4, 5)
+            _if_not_int_raise(d)
+            _if_not_int_raise(45)
             _if_not_int_raise(5+5)
             _if_not_int_raise(5, 6, -5)
             _if_not_int_raise(-5, -6, -5)
             _if_not_int_raise(a, b, c)
 
         except ValueError:
-            assert False, f"'_if_not_int_raise' raised an exception with a float"
+            assert False, f"'_if_not_int_raise' raised an exception with a integer"
 
     def test_if_not_int_raise(self):
         a = 1.3
