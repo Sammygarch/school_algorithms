@@ -424,7 +424,8 @@ class TestForCicleRaisedErrors(unittest.TestCase):
             a = -1
             circle_area("t")
             circle_area(False)
-            circle_area(-1)
+            circle_area(-34)
+            circle_area(0)
             circle_area(a)
 
     def test_circumference_raise_errors(self):
@@ -432,7 +433,8 @@ class TestForCicleRaisedErrors(unittest.TestCase):
             a = -1
             circumference("t")
             circumference(False)
-            circumference(-1)
+            circumference(-34)
+            circumference(0)
             circumference(a)
 
     def test_circumference2_raise_errors(self):
@@ -440,7 +442,8 @@ class TestForCicleRaisedErrors(unittest.TestCase):
             a = -1
             circumference2("t")
             circumference2(False)
-            circumference2(-1)
+            circumference2(-34)
+            circumference2(0)
             circumference2(a)
 
 class TestForPyramidRaisedErrors(unittest.TestCase):
@@ -450,6 +453,7 @@ class TestForPyramidRaisedErrors(unittest.TestCase):
             right_rect_pyramid(False, True, False)
             right_rect_pyramid(False, "t", False)
             right_rect_pyramid(1, "t", 5)
+            right_rect_pyramid(0, 0, 0)
             right_rect_pyramid(a, b ,c)
 
     def test_square_pyramid_raised_errors(self):
@@ -486,7 +490,6 @@ class TestForLcmRaisedErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             a, b = 1.5, 5.5
             lcm("t", "e")
-            lcm(False, True)
             lcm(False, "t")
             lcm(-1, "t")
             lcm(1.5, 5.5)
@@ -498,8 +501,6 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             a, b, c = 1.5, 5.5, 5.98
             lcm_3_nums("t", "e", "s")
             lcm_3_nums(False, True, False)
-            lcm_3_nums(False, "t", "5")
-            lcm_3_nums(-1, "t", True)
             lcm_3_nums(1.5, 5.5, 5.98)
             lcm_3_nums(a, b, c)
 
