@@ -293,11 +293,6 @@ class TestCircleAlgos(unittest.TestCase):
         self.assertEqual(circle_area(10.0), 314.1592653589793)
         self.assertEqual(circle_area(2.5), 19.634954084936208)
         self.assertEqual(circle_area(2.50), 19.634954084936208)
-        self.assertEqual(circle_area(12), 452.3893421169302)
-        self.assertEqual(circle_area(12.0), 452.3893421169302)
-        self.assertEqual(circle_area(343234), 370109707142.3578)
-        self.assertEqual(circle_area(343234.0), 370109707142.3578)
-        self.assertEqual(circle_area(4.75737), 71.1023134978348)
         self.assertEqual(circle_area(a), 314.1592653589793)
 
     def test_area_of_sector(self):
@@ -306,7 +301,6 @@ class TestCircleAlgos(unittest.TestCase):
         self.assertEqual(area_of_sector(5.0, 40.0), 8.726646259971647)
         self.assertEqual(area_of_sector(10, 0.1), 0.08726646259971647)
         self.assertEqual(area_of_sector(10.0, 0.1), 0.08726646259971647)
-        self.assertEqual(area_of_sector(10, 5), 4.363323129985823)
         self.assertEqual(area_of_sector(a, b), 8.726646259971647)
 
 
@@ -316,7 +310,6 @@ class TestCircleAlgos(unittest.TestCase):
         self.assertEqual(circumference(5.0),  31.41592653589793)
         self.assertEqual(circumference(7), 43.982297150257104)
         self.assertEqual(circumference(7.0), 43.982297150257104)
-        self.assertEqual(circumference(6.25), 39.269908169872416)
         self.assertEqual(circumference(a),  31.41592653589793)
 
     def test_circumference2(self):
@@ -325,7 +318,6 @@ class TestCircleAlgos(unittest.TestCase):
         self.assertEqual(circumference2(10.0), 31.41592653589793)
         self.assertEqual(circumference2(14), 43.982297150257104)
         self.assertEqual(circumference2(14.0), 43.982297150257104)
-        self.assertEqual(circumference2(12.5), 39.269908169872416)
         self.assertEqual(circumference2(a), 31.41592653589793)
 
 
@@ -335,6 +327,7 @@ class TestPyramidAlgos(unittest.TestCase):
         self.assertEqual(square_pyramid(5, 6), 50)
         self.assertEqual(square_pyramid(4.4, 6), 38.720000000000006)
         self.assertEqual(square_pyramid(4.4, 8), 51.62666666666667)
+        self.assertEqual(square_pyramid(5, 27), 225)
         self.assertEqual(square_pyramid(a, b), 50)
 
 
@@ -344,8 +337,6 @@ class TestPyramidAlgos(unittest.TestCase):
         self.assertEqual(right_rect_pyramid(3.0, 4.0, 7.0), 28)
         self.assertEqual(right_rect_pyramid(3.0, 4.4, 7.2), 31.680000000000003)
         self.assertEqual(right_rect_pyramid(10, 5, 6), 100)
-        self.assertEqual(right_rect_pyramid(10.0, 5.0, 6.0), 100)
-        self.assertEqual(right_rect_pyramid(4.4, 2.3, 23), 77.58666666666666)
         self.assertEqual(right_rect_pyramid(a, b, c), 28)
 
 class TestLcmAlgos(unittest.TestCase):
@@ -361,7 +352,8 @@ class TestLcmAlgos(unittest.TestCase):
         a, b, c = 9, 11, 5
         self.assertEqual(lcm_3_nums(5, 9, 10), 90)
         self.assertEqual(lcm_3_nums(5, 9, 11), 495)
-        self.assertEqual(lcm_3_nums(9, 10, 5), 90)
+        self.assertEqual(lcm_3_nums(12, 15, 75), 300)
+        self.assertEqual(lcm_3_nums(13, 43, 65), 2795)
         self.assertEqual(lcm_3_nums(a, b, c), 495)
 
     def test_4_num_lcm(self):
@@ -369,7 +361,7 @@ class TestLcmAlgos(unittest.TestCase):
         self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
         self.assertEqual(lcm_4_nums(5, 9, 10, 16), 720)
         self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
-        self.assertEqual(lcm_4_nums(5, 10, 15, 20), 60)
+        self.assertEqual(lcm_4_nums(13, 43, 65, 52), 11180)
         self.assertEqual(lcm_4_nums(a, b, c, d), 60)
 
     def test_5_num_lcm(self):
@@ -403,6 +395,7 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             a, b = False, "t"
             time_calc("t", "e")
             time_calc(False, True)
+            time_calc(True, True)
             time_calc(False, "t")
             time_calc(a, b)
 
