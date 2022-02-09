@@ -52,6 +52,7 @@ def lcm(*args):
     45
     >>> school_algorithms.lcm(5, 9, 10)
     90
+    >>> etc.... 
     """
     _if_not_int_raise(*args)
     if len(args) == 1:
