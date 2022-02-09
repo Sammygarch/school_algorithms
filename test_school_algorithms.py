@@ -25,10 +25,7 @@ class TestImports(unittest.TestCase):
                                                circumference,
                                                circumference2,
                                                square_pyramid,
-                                               lcm, lcm_3_nums,
-                                               area_of_sector,
-                                               lcm_4_nums,
-                                               lcm_5_nums)
+                                               lcm,area_of_sector)
 
         except ImportError:
             assert False, "A main import failed"
@@ -50,10 +47,7 @@ from src.school_algorithms import (circle_area,
                                    circumference,
                                    circumference2,
                                    square_pyramid,
-                                   lcm, lcm_3_nums,
-                                   area_of_sector,
-                                   lcm_4_nums,
-                                   lcm_5_nums)
+                                   lcm,area_of_sector)
 
 class TestPrivFuncs(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
@@ -340,7 +334,16 @@ class TestPyramidAlgos(unittest.TestCase):
         self.assertEqual(right_rect_pyramid(a, b, c), 28)
 
 class TestLcmAlgos(unittest.TestCase):
-    def test_lcm(self):
+
+    def test_lcm_1_nums(self):
+        a = 7
+        self.assertEqual(lcm(5), 5)
+        self.assertEqual(lcm(10), 10)
+        self.assertEqual(lcm(36), 36)
+        self.assertEqual(lcm(6), 6)
+        self.assertEqual(lcm(a), 7)
+
+    def test_lcm_2_nums(self):
         a, b = 7, 6
         self.assertEqual(lcm(5, 9), 45)
         self.assertEqual(lcm(10, 10), 10)
@@ -350,27 +353,27 @@ class TestLcmAlgos(unittest.TestCase):
 
     def test_3_num_lcm(self):
         a, b, c = 9, 11, 5
-        self.assertEqual(lcm_3_nums(5, 9, 10), 90)
-        self.assertEqual(lcm_3_nums(5, 9, 11), 495)
-        self.assertEqual(lcm_3_nums(12, 15, 75), 300)
-        self.assertEqual(lcm_3_nums(13, 43, 65), 2795)
-        self.assertEqual(lcm_3_nums(a, b, c), 495)
+        self.assertEqual(lcm(5, 9, 10), 90)
+        self.assertEqual(lcm(5, 9, 11), 495)
+        self.assertEqual(lcm(12, 15, 75), 300)
+        self.assertEqual(lcm(13, 43, 65), 2795)
+        self.assertEqual(lcm(a, b, c), 495)
 
     def test_4_num_lcm(self):
         a, b, c, d = 5, 10, 15, 20
-        self.assertEqual(lcm_4_nums(5, 9, 10, 15), 90)
-        self.assertEqual(lcm_4_nums(5, 9, 10, 16), 720)
-        self.assertEqual(lcm_4_nums(12, 9, 10, 16), 720)
-        self.assertEqual(lcm_4_nums(13, 43, 65, 52), 11180)
-        self.assertEqual(lcm_4_nums(a, b, c, d), 60)
+        self.assertEqual(lcm(5, 9, 10, 15), 90)
+        self.assertEqual(lcm(5, 9, 10, 16), 720)
+        self.assertEqual(lcm(12, 9, 10, 16), 720)
+        self.assertEqual(lcm(13, 43, 65, 52), 11180)
+        self.assertEqual(lcm(a, b, c, d), 60)
 
     def test_5_num_lcm(self):
         a, b, c, d, e = 5, 10, 15, 20, 30
-        self.assertEqual(lcm_5_nums(5, 9, 10, 15, 16), 720)
-        self.assertEqual(lcm_5_nums(5, 9, 10, 16, 23), 16560)
-        self.assertEqual(lcm_5_nums(12, 13, 15, 75, 20), 3900)
-        self.assertEqual(lcm_5_nums(5, 10, 15, 20, 30), 60)
-        self.assertEqual(lcm_5_nums(a, b, c, d, e), 60)
+        self.assertEqual(lcm(5, 9, 10, 15, 16), 720)
+        self.assertEqual(lcm(5, 9, 10, 16, 23), 16560)
+        self.assertEqual(lcm(12, 13, 15, 75, 20), 3900)
+        self.assertEqual(lcm(5, 10, 15, 20, 30), 60)
+        self.assertEqual(lcm(a, b, c, d, e), 60)
 
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
@@ -395,7 +398,6 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             a, b = False, "t"
             time_calc("t", "e")
             time_calc(False, True)
-            time_calc(True, True)
             time_calc(False, "t")
             time_calc(a, b)
 
@@ -486,7 +488,16 @@ class TestForTriangleRaisedErrors(unittest.TestCase):
             triangle_area(a, b)
 
 class TestForLcmRaisedErrors(unittest.TestCase):
-    def test_lcm_raised_errors(self):
+    def test_lcm_1_num_raised_errors(self):
+        with self.assertRaises(ValueError):
+            a = 1.5
+            lcm("t")
+            lcm(False)
+            lcm(-1)
+            lcm(True)
+            lcm(a, b)
+
+    def test_lcm_2_nums_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b = 1.5, 5.5
             lcm("t", "e")
@@ -499,30 +510,30 @@ class TestForLcmRaisedErrors(unittest.TestCase):
     def test_lcm_3_nums_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b, c = 1.5, 5.5, 5.98
-            lcm_3_nums("t", "e", "s")
-            lcm_3_nums(False, True, False)
-            lcm_3_nums(1.5, 5.5, 5.98)
-            lcm_3_nums(a, b, c)
+            lcm("t", "e", "s")
+            lcm(False, True, False)
+            lcm(1.5, 5.5, 5.98)
+            lcm(a, b, c)
 
     def test_lcm_4_nums_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b, c, d = 1.5, 5.5, 5.98, 4.5
-            lcm_4_nums("t", "e", "s", "t")
-            lcm_4_nums(False, True, False, 5)
-            lcm_4_nums(False, "t", "5", 1)
-            lcm_4_nums(-1, "t", True, False)
-            lcm_4_nums(1.5, 5.5, 5.98, 4.5)
-            lcm_4_nums(a, b, c, d)
+            lcm("t", "e", "s", "t")
+            lcm(False, True, False, 5)
+            lcm(False, "t", "5", 1)
+            lcm(-1, "t", True, False)
+            lcm(1.5, 5.5, 5.98, 4.5)
+            lcm(a, b, c, d)
 
     def test_lcm_5_nums_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b, c, d, e = 1.5, 5.5, 5.98, 4.5, 7.8
-            lcm_5_nums("t", "e", "s", "t", "i")
-            lcm_5_nums(False, True, False, 5, 0)
-            lcm_5_nums(False, "t", "5", 1, True)
-            lcm_5_nums(-1, "t", True, False, "e")
-            lcm_5_nums(1.5, 5.5, 5.98, 4.5, 4)
-            lcm_5_nums(a, b, c, d, e)
+            lcm("t", "e", "s", "t", "i")
+            lcm(False, True, False, 5, 0)
+            lcm(False, "t", "5", 1, True)
+            lcm(-1, "t", True, False, "e")
+            lcm(1.5, 5.5, 5.98, 4.5, 4)
+            lcm(a, b, c, d, e)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_not_positive_raise(self):
