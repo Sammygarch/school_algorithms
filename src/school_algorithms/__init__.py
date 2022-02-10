@@ -75,19 +75,11 @@ square_pyramid
     A function that calculates the volume of a square based pyramid
 
 lcm
-    A function that calculates the Lowest Common Multiple from 2 numbers
-
-lcm_3_nums
-    A function that calculates the Lowest Common Multiple from 3 numbers
-
-lcm_4_nums
-    A function that calculates the Lowest Common Multiple from 4 numbers
-
-lcm_5_nums
-    A function that calculates the Lowest Common Multiple from 5 numbers
+    A function that calculates the Lowest Common Multiple (lcm) from any amount of numbers
 
 area_of_sector
     A function that calculates the area of a sector in a circle
+
 """
 from .circle import *
 from .physics import *
@@ -95,4 +87,4 @@ from .pythagorus import *
 from .trapezium import *
 from .triangle import *
 from .pyramid import *
-from .lcm import *
+from .lcm import lcm

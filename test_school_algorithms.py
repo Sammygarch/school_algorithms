@@ -334,7 +334,6 @@ class TestPyramidAlgos(unittest.TestCase):
         self.assertEqual(right_rect_pyramid(a, b, c), 28)
 
 class TestLcmAlgos(unittest.TestCase):
-
     def test_lcm_1_nums(self):
         a = 7
         self.assertEqual(lcm(5), 5)
