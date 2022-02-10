@@ -122,6 +122,35 @@ def epe_calc(k, e):
     >>> school_algorithms.epe_calc(5, 10)
     250
     """
-
     _if_not_int_or_float_raise(k, e)
     return 0.5 * (k * (e**2))
+
+def kinetic_calc(s ,m):
+    """Calculates Elastic Potential Energy using the formula:
+        kinetic energy = 0.5 × mass × (speed)^2
+
+    Parameters
+    ----------
+    s: int or float
+        The speed value in the equation.
+
+    m: int or float
+        The mass value in the equation.
+
+    Returns
+    -------
+    Float
+        0.5 * m * s**2
+
+    Raises
+    ------
+    ValueError
+        If m or s is not an integer or a float.
+
+    Examples
+    --------
+    >>> school_algorithms.kinetic_calc(5, 10)
+    125
+    """
+    _if_not_int_or_float_raise(m, s)
+    return 0.5 * m * s**2

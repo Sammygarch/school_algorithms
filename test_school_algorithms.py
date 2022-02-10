@@ -25,7 +25,8 @@ class TestImports(unittest.TestCase):
                                                circumference,
                                                circumference2,
                                                square_pyramid,
-                                               lcm,area_of_sector)
+                                               lcm,area_of_sector,
+                                               kinetic_calc)
 
         except ImportError:
             assert False, "A main import failed"
@@ -47,7 +48,8 @@ from src.school_algorithms import (circle_area,
                                    circumference,
                                    circumference2,
                                    square_pyramid,
-                                   lcm,area_of_sector)
+                                   lcm,area_of_sector,
+                                   kinetic_calc)
 
 class TestPrivFuncs(unittest.TestCase):
     def test_if_not_int_or_float_raise(self):
@@ -241,6 +243,17 @@ class TestPhysicsAlgos(unittest.TestCase):
         a, b = 4.0, 2.0
         self.assertEqual(epe_calc(a, b), 8)
 
+    def test_kinetic_calc(self):
+        a, b = 2, 4
+        self.assertEqual(kinetic_calc(10, 5), 250)
+        self.assertEqual(kinetic_calc(10, 10), 500)
+        self.assertEqual(kinetic_calc(10, 10.5), 525)
+        self.assertEqual(kinetic_calc(6.5, 10.5), 221.8125)
+        self.assertEqual(kinetic_calc(5, 10), 125)
+        self.assertEqual(kinetic_calc(a, b), 8)
+        a, b = 2.0, 4.0
+        self.assertEqual(kinetic_calc(a, b), 8)
+
 
 class TestShapeAlgos(unittest.TestCase):
     def test_pythag_hypot(self):
@@ -253,7 +266,7 @@ class TestShapeAlgos(unittest.TestCase):
         self.assertEqual(pythag_hypot(2, 7), 7.280109889280518)
         self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
         a, b = 4.0, 2.0
-        self.assertEqual(pythag_hypot(a, b), 4.47213595499958)
+        self.assertEqual(pythag_hypot(a, b), 4.47213595499958) 
 
     def test_pythag_leg(self):
         a, b = 4, 2
@@ -512,6 +525,7 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             lcm("t", "e", "s")
             lcm(False, True, False)
             lcm(1.5, 5.5, 5.98)
+            lcm(1.5, "t", 5.98)
             lcm(a, b, c)
 
     def test_lcm_4_nums_raised_errors(self):
