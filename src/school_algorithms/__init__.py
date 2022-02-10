@@ -60,6 +60,9 @@ right_rect_pyramid
 epe_calc
     A function that calculates Elastic Potential Energy
 
+kinetic_calc
+    A function that calculates Kinetic Energy
+
 circumference
     A function that calculates the circumference of a circle
 

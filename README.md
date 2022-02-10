@@ -26,6 +26,8 @@
 - _A function that calculates power from energy and time_
 - _A function that calculates energy from power and time_
 - _A function that calculates time from power and energy_
+- _A function that calculates Elastic Potential energy from the spring constant and extension_
+- _A function that calculates Kinetic Energy from spead and mass_
 - _A function that uses Pythagorean theorem to calculate the hypotenuse of a right-angled triangle_
 - _A function that uses Pythagorean theorem to calculate a leg of a right-angled triangle_
 - _A function that calculates the area of a triangle_
