@@ -507,7 +507,7 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             lcm(False)
             lcm(-1)
             lcm(True)
-            lcm(a, b)
+            lcm(a)
 
     def test_lcm_2_nums_raised_errors(self):
         with self.assertRaises(ValueError):
