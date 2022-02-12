@@ -10,7 +10,28 @@ class TestImports(unittest.TestCase):
         except ImportError:
             assert False, "A private import failed"
 
-    def test_main_imports(self):
+    def test_main_imports_from_pypi(self):
+        try:
+            from school_algorithms import (circle_area,
+                                               power_calc,
+                                               energy_calc,
+                                               time_calc,
+                                               pythag_leg,
+                                               pythag_hypot,
+                                               trapezium_area,
+                                               triangle_area,
+                                               right_rect_pyramid,
+                                               epe_calc,
+                                               circumference,
+                                               circumference2,
+                                               square_pyramid,
+                                               lcm,area_of_sector,
+                                               kinetic_calc)
+
+        except ImportError:
+            assert False, "A main import failed from pypi"
+
+    def test_main_imports_from_local_file(self):
         try:
             from src.school_algorithms import (circle_area,
                                                power_calc,
@@ -29,7 +50,7 @@ class TestImports(unittest.TestCase):
                                                kinetic_calc)
 
         except ImportError:
-            assert False, "A main import failed"
+            assert False, "A main import failed from local file"
 
 from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_raise,
                                                        _if_not_positive_raise,
