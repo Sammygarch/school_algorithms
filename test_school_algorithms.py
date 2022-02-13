@@ -569,6 +569,16 @@ class TestForLcmRaisedErrors(unittest.TestCase):
             lcm(1.5, 5.5, 5.98, 4.5, 4)
             lcm(a, b, c, d, e)
 
+    def test_lcm_6_nums_raised_errors(self):
+        with self.assertRaises(ValueError):
+            a, b, c, d, e, f = 1.5, 5.5, 5.98, 4.5, 7.8, "t"
+            lcm("t", "e", "s", "t", "i", "n")
+            lcm(False, True, False, 5, 0, "t")
+            lcm(False, "t", "5", 1, True, False)
+            lcm(-1, "t", True, False, "e", 5.4)
+            lcm(1.5, 5.5, 5.98, 4.5, 4, 3)
+            lcm(a, b, c, d, e, f)
+
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_not_positive_raise(self):
         with self.assertRaises(ValueError):
