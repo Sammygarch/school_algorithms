@@ -408,6 +408,14 @@ class TestLcmAlgos(unittest.TestCase):
         self.assertEqual(lcm(5, 10, 15, 20, 30), 60)
         self.assertEqual(lcm(a, b, c, d, e), 60)
 
+    def test_6_num_lcm(self):
+        a, b, c, d, e, f = 5, 10, 15, 20, 30, 35
+        self.assertEqual(lcm(5, 9, 10, 15, 16, 74), 26640)
+        self.assertEqual(lcm(5, 9, 10, 16, 23, 4), 16560)
+        self.assertEqual(lcm(12, 13, 15, 75, 20, 33), 42900)
+        self.assertEqual(lcm(5, 10, 15, 20, 30, 35), 420)
+        self.assertEqual(lcm(a, b, c, d, e, f), 420)
+
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
     def test_power_calc_raised_errors(self):
