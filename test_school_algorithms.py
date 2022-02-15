@@ -424,6 +424,8 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             power_calc("t", "e")
             power_calc(False, True)
             power_calc(False, "t")
+            power_calc("t", 2)
+            power_calc(False, 5.3)
             power_calc(a, b)
 
     def test_energy_calc_raised_errors(self):
@@ -432,6 +434,8 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             energy_calc("t", "e")
             energy_calc(False, True)
             energy_calc(False, "t")
+            energy_calc("t", 53)
+            energy_calc(False, 3)
             energy_calc(a, b)
 
     def test_time_calc_raised_errors(self):
@@ -440,6 +444,8 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             time_calc("t", "e")
             time_calc(False, True)
             time_calc(False, "t")
+            time_calc("t", 2)
+            time_calc(False, 35)
             time_calc(a, b)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
