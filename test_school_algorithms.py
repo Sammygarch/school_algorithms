@@ -521,6 +521,7 @@ class TestForTrapeziumRaisedErrors(unittest.TestCase):
             trapezium_area("t", "e", "s")
             trapezium_area(False, True, False)
             trapezium_area(False, "t", False)
+            trapezium_area(False, 4.5, False)
             trapezium_area(-4, "t", 6)
             trapezium_area(a, b, c)
 
@@ -531,6 +532,8 @@ class TestForTriangleRaisedErrors(unittest.TestCase):
             triangle_area("t", "e")
             triangle_area(False, True)
             triangle_area(False, "t")
+            triangle_area(False, 3.4)
+            triangle_area(True, 3.4)
             triangle_area(-1, "t")
             triangle_area(a, b)
 
