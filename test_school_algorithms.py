@@ -13,9 +13,9 @@ class TestImports(unittest.TestCase):
     def test_main_imports_from_pypi(self):
         try:
             from school_algorithms import (circle_area,
-                                               power_calc,
+                                               power_calc_from_energy_and_time,
                                                energy_calc,
-                                               time_calc,
+                                               time_calc_from_power_and_energy,
                                                pythag_leg,
                                                pythag_hypot,
                                                trapezium_area,
@@ -34,9 +34,9 @@ class TestImports(unittest.TestCase):
     def test_main_imports_from_local_file(self):
         try:
             from src.school_algorithms import (circle_area,
-                                               power_calc,
+                                               power_calc_from_energy_and_time,
                                                energy_calc,
-                                               time_calc,
+                                               time_calc_from_power_and_energy,
                                                pythag_leg,
                                                pythag_hypot,
                                                trapezium_area,
@@ -57,9 +57,9 @@ from src.school_algorithms._if_not_valid_raise import (_if_not_int_or_float_rais
                                                        _if_not_int_raise)
 
 from src.school_algorithms import (circle_area,
-                                   power_calc,
+                                   power_calc_from_energy_and_time,
                                    energy_calc,
-                                   time_calc,
+                                   time_calc_from_power_and_energy,
                                    pythag_leg,
                                    pythag_hypot,
                                    trapezium_area,
@@ -213,16 +213,16 @@ class TestPrivFuncs(unittest.TestCase):
             _if_not_int_raise(a, b, c)
 
 class TestPhysicsAlgos(unittest.TestCase):
-    def test_power_calc(self):
+    def test_power_calc_from_energy_and_time(self):
         a, b = 4, 2
-        self.assertEqual(power_calc(4, 2), 2.0)
-        self.assertEqual(power_calc(-4, 2), -2.0)
-        self.assertEqual(power_calc(4.0, 2), 2.0)
-        self.assertEqual(power_calc(4.0, 2.0), 2.0)
-        self.assertEqual(power_calc(-4.0, 2.0), -2.0)
-        self.assertEqual(power_calc(-4.0, -2.0), 2.0)
-        self.assertEqual(power_calc(4, -2), -2.0)
-        self.assertEqual(power_calc(a, b), 2.0)
+        self.assertEqual(power_calc_from_energy_and_time(4, 2), 2.0)
+        self.assertEqual(power_calc_from_energy_and_time(-4, 2), -2.0)
+        self.assertEqual(power_calc_from_energy_and_time(4.0, 2), 2.0)
+        self.assertEqual(power_calc_from_energy_and_time(4.0, 2.0), 2.0)
+        self.assertEqual(power_calc_from_energy_and_time(-4.0, 2.0), -2.0)
+        self.assertEqual(power_calc_from_energy_and_time(-4.0, -2.0), 2.0)
+        self.assertEqual(power_calc_from_energy_and_time(4, -2), -2.0)
+        self.assertEqual(power_calc_from_energy_and_time(a, b), 2.0)
         a, b = 4.0, 2.0
         self.assertEqual(energy_calc(a, b), 8)
 
@@ -240,18 +240,18 @@ class TestPhysicsAlgos(unittest.TestCase):
         self.assertEqual(energy_calc(a, b), 8)
 
 
-    def test_time_calc(self):
+    def test_time_calc_from_power_and_energy(self):
         a, b = 2, 4
-        self.assertEqual(time_calc(2, 4), 2.0)
-        self.assertEqual(time_calc(2, -4), -2.0)
-        self.assertEqual(time_calc(2, 4.0), 2.0)
-        self.assertEqual(time_calc(2.0, 4.0), 2.0)
-        self.assertEqual(time_calc(2.0, -4), -2.0)
-        self.assertEqual(time_calc(-2.0, -4.0), 2.0)
-        self.assertEqual(time_calc(2, -4), -2.0)
-        self.assertEqual(time_calc(a, b), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2, 4), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2, -4), -2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2, 4.0), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2.0, 4.0), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2.0, -4), -2.0)
+        self.assertEqual(time_calc_from_power_and_energy(-2.0, -4.0), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(2, -4), -2.0)
+        self.assertEqual(time_calc_from_power_and_energy(a, b), 2.0)
         a, b = 2.0, 4.0
-        self.assertEqual(time_calc(a, b), 2.0)
+        self.assertEqual(time_calc_from_power_and_energy(a, b), 2.0)
 
     def test_epe_calc(self):
         a, b = 4, 2
@@ -418,15 +418,15 @@ class TestLcmAlgos(unittest.TestCase):
 
 
 class TestForPhysicsRaisedErrors(unittest.TestCase):
-    def test_power_calc_raised_errors(self):
+    def test_power_calc_from_energy_and_time_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b = False, "t"
-            power_calc("t", "e")
-            power_calc(False, True)
-            power_calc(False, "t")
-            power_calc("t", 2)
-            power_calc(False, 5.3)
-            power_calc(a, b)
+            power_calc_from_energy_and_time("t", "e")
+            power_calc_from_energy_and_time(False, True)
+            power_calc_from_energy_and_time(False, "t")
+            power_calc_from_energy_and_time("t", 2)
+            power_calc_from_energy_and_time(False, 5.3)
+            power_calc_from_energy_and_time(a, b)
 
     def test_energy_calc_raised_errors(self):
         with self.assertRaises(ValueError):
@@ -438,15 +438,15 @@ class TestForPhysicsRaisedErrors(unittest.TestCase):
             energy_calc(False, 3)
             energy_calc(a, b)
 
-    def test_time_calc_raised_errors(self):
+    def test_time_calc_from_power_and_energy_raised_errors(self):
         with self.assertRaises(ValueError):
             a, b = False, "t"
-            time_calc("t", "e")
-            time_calc(False, True)
-            time_calc(False, "t")
-            time_calc("t", 2)
-            time_calc(False, 35)
-            time_calc(a, b)
+            time_calc_from_power_and_energy("t", "e")
+            time_calc_from_power_and_energy(False, True)
+            time_calc_from_power_and_energy(False, "t")
+            time_calc_from_power_and_energy("t", 2)
+            time_calc_from_power_and_energy(False, 35)
+            time_calc_from_power_and_energy(a, b)
 
 class TestForPythagRaisedErrors(unittest.TestCase):
     def test_pythag_hypot_raised_errors(self):
